@@ -1,3 +1,7 @@
+---
+layout: post
+title:  "How To Avoid Automatic Evaluation with EF Core"
+---
 # How To Avoid Automatic Evaluation with EF Core
 
 https://saebamini.com/the-dangerous-ef-core-feature-automatic-client-evaluation/
