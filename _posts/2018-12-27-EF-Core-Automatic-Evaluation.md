@@ -2,6 +2,7 @@
 layout: post
 title: 'How To Avoid Automatic Evaluation with EF Core'
 author: 'Matthew Edgar'
+excerpt_separator: <!--more-->
 ---
 
 [https://saebamini.com/the-dangerous-ef-core-feature-automatic-client-evaluation/](https://saebamini.com/the-dangerous-ef-core-feature-automatic-client-evaluation/){:target="\_blank"}
@@ -16,6 +17,8 @@ var query = context
     .Where(x => x.Url.Equals("google.com/", StringComparison.OrdinalIgnoreCase));
 var results = query.ToList();
 ```
+
+<!--more-->
 
 The overloaded `Equals` method with the `StringComparison` argument is not something EF Core understands. As
 a result, the generated query has no WHERE clause and it retrieves all the records from the Blog table, until
