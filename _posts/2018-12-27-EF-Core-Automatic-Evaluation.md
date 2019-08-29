@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "How To Avoid Automatic Evaluation with EF Core"
+title: 'How To Avoid Automatic Evaluation with EF Core'
+author: 'Matthew Edgar'
 ---
-# How To Avoid Automatic Evaluation with EF Core
 
 https://saebamini.com/the-dangerous-ef-core-feature-automatic-client-evaluation/
 
-When using EF Core, the default configuration will not warn you (with a run-time error) if you 
+When using EF Core, the default configuration will not warn you (with a run-time error) if you
 are using a Linq query that EF Core cannot evaluate. This will result in the query being
 run in a manner that might not be as expected. For example:
 
