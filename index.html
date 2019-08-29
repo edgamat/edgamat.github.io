@@ -1,33 +1,40 @@
 ---
 layout: default
-title: edgamat
+title: Home
 ---
 
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/blog.html">Blog</a></li>
-  </ul>
-</nav>
 <div class="container">
   <div class="blurb">
     <h1>Greetings, Programs</h1>
-	<p>Welcome to my blog.</p>
+    <p>Welcome to my blog.</p>
 
-	<p>This website is an attempt to write ideas down so I can refer to them later. If someone else finds
-	these ideas useful, then I am glad.</p>
+    <p>
+      This website is an attempt to write ideas down so I can refer to them later. If someone else finds these ideas useful, then I am glad.
+    </p>
 
-	<p></p>Matthew Edgar  <br/>
-	<a href="mailto:edgamat@outlook.com">edgamat@outlook.com</a></p>
+    <p>
+      Matthew Edgar<br />
+      <a href="mailto:edgamat@outlook.com">edgamat@outlook.com</a>
+    </p>
 
+    <h1>Latest Posts</h1>
+
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
   <!-- /.blurb -->
 </div>
 <!-- /.container -->
 <footer>
-  <ul>
+  <hr />
+  <!--ul>
     <li><a href="mailto:edgamat@outlook.com">email</a></li>
     <li><a href="https://github.com/edgamat">github.com/edgamat</a></li>
     <li><a href="https://twitter.com/edgamat">twitter.com/edgamat</a></li>
-  </ul>
+  </ul -->
 </footer>
