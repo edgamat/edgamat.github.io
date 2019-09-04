@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: home
 title: Home
+list_title: Latest Posts
 ---
 
 <div class="container">
@@ -17,15 +18,16 @@ title: Home
       <a href="mailto:edgamat@outlook.com">edgamat@outlook.com</a>
     </p>
 
-    <h1>Latest Posts</h1>
+    <!-- h1>Latest Posts</h1>
 
     <ul>
-      {% for post in site.posts %}
+      {% for post in paginator.posts %}
       <li>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </li>
       {% endfor %}
     </ul>
+ -->
   </div>
   <!-- /.blurb -->
 </div>

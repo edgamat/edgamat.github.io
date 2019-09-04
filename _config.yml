@@ -4,3 +4,10 @@ title: Span of Reference
 email: edgamat@outlook.com
 description: A blog about software development ideas
 author: 'Matthew Edgar'
+show_excerpts: true
+# paginate: 3
+
+minima:
+  social_links:
+    twitter: edgamat
+    github: edgamat
