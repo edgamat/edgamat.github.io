@@ -11,3 +11,7 @@ minima:
   social_links:
     twitter: edgamat
     github: edgamat
+
+# Octopress
+post_ext: md
+page_ext: html
