@@ -5,7 +5,7 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-If your application uses time, then it necessary for you consider how your application thinks about time. It can be
+If your application uses time, then it is necessary for you consider how your application thinks about time. It can be
 an enemy if you let it, but it can be a friend if you do it right.
 
 <!--more-->
