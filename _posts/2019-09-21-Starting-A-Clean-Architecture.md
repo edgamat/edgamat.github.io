@@ -49,8 +49,20 @@ That's enough to get us started.
 ## Where to start
 
 I have been told from an early age that one 'builds' software, like a house. It is constructed. I feel differently. It is
-too organic a thing to be confined to such ridged notions. Software _grows_. You start small and learn from what you experience
-to achieve a working software application. So where does an application start to grow?
+too organic a thing to be confined to such ridged notions. Software _grows_.
+
+You start small and learn from what you experience to achieve a working software application. So where does an application start to grow? It starts with the Domain business logic. This set of entities represents the business objects in
+your particular subject domain, including general and enterprise-wide rules that the domain operates under.
+
+I advocate starting here in the center, with these entities. I do not advocate starting with the database or
+with the user interface. Nor do I advocate starting with the framework (in this case ASP.NET Core) the application
+uses. Start with the domain entities, get them right. Test your assumptions of how the rules work.
+
+**NOTE**: That's not to say that data modelling and user interface design and exploration aren't important. They are
+and typically are done in parallel with the design of the business logic. But when you are design your UI and database,
+there can be a lot of volatility at first. Stick with the Entities to ensure you know what the application is all about.
+
+## Setup the Domain Logic
 
 With ASP.NET Core, I will start with a .NET Standard Class Library. It begins its life with no dependencies except the .NET base classes and the C# programming language. I will create a minimal folder structure for what I know I will build:
 
@@ -71,26 +83,26 @@ dotnet new globaljson --sdk-version 2.2.104
 cd ..\
 
 md "$projectName\src"
-md "$projectName\src\$projectName.Core"
+md "$projectName\src\$projectName.Domain"
 
-# Create the class library for the Core business logic
-cd "$projectName\src\$projectName.Core"
+# Create the class library for the Domain business logic
+cd "$projectName\src\$projectName.Domain"
 dotnet new classlib --no-restore
 cd ..\..\..\
 
 md "$projectName\test"
-md "$projectName\test\UnitTests.$projectName.Core"
+md "$projectName\test\UnitTests.$projectName.Domain"
 
-# Create the class library for the Core business logic unit tests
-cd "$projectName\test\UnitTests.$projectName.Core"
+# Create the class library for the Domain business logic unit tests
+cd "$projectName\test\UnitTests.$projectName.Domain"
 dotnet new xunit --no-restore
-dotnet add reference "..\..\src\$projectName.Core\$projectName.Core.csproj"
+dotnet add reference "..\..\src\$projectName.Domain\$projectName.Domain.csproj"
 cd ..\..\
 
 # Create the Solution file
 dotnet new sln -n "$projectName"
-dotnet sln add ".\src\$projectName.Core\$projectName.Core.csproj"
-dotnet sln add ".\test\UnitTests.$projectName.Core\UnitTests.$projectName.Core.csproj"
+dotnet sln add ".\src\$projectName.Domain\$projectName.Domain.csproj"
+dotnet sln add ".\test\UnitTests.$projectName.Domain\UnitTests.$projectName.Domain.csproj"
 
 # Create a .gitignore file
 $url = "https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"
@@ -105,7 +117,7 @@ cd ..\
 
 ## Next Time
 
-This is a good start. We have a minimal .NET Solution for our Core business logic. Next we'll start
+This is a good start. We have a minimal .NET Solution for our Domain business logic. Next we'll start
 adding in some functionality for our application and see where it leads us.
 
 [clean-arch-blog]: http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
