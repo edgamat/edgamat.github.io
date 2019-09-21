@@ -5,14 +5,14 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-If your application uses time, then it is necessary for you consider how your application thinks about time. It can be
-an enemy if you let it, but it can be a friend if you do it right.
+If your application uses time, then it is necessary for you to consider how your application thinks about time. It can be
+an enemy if you let it, but it can be a friend if you use it right.
 
 <!--more-->
 
 I'm not going to attempt to tell you that using `DateTime.Now` is evil (in most cases it is) nor am I
 going to promote alternatives like [NodaTime][noda] (although that will be the topic of another post). No, I want
-you to think about how does one reason about time when testing your code.
+you to think about time when testing your code.
 
 Consider the following example. This function is responsible for determining if an action is enabled based
 on the current time (say, Christmas Day):
@@ -26,7 +26,10 @@ public bool IsEnabled()
 }
 ```
 
-This function is nearly impossible to write a unit test for. But let's say you change it to be:
+This function is nearly impossible to write a unit test for because the call to `DateTime.UtcNow` depends on the
+current system time of the machine running the code.
+
+However, let's say you change it to be:
 
 ```csharp
 public bool IsEnabled(DateTime utcNow)
@@ -37,8 +40,8 @@ public bool IsEnabled(DateTime utcNow)
 }
 ```
 
-That's better. Now at least you can change when 'Now' is and write unit tests. So as a general rule,
-it is better to pass the current system date in as a dependency to your code, rather than calculating
+That's better. Now at least you can change when 'Now' is and write unit tests. As a general rule,
+it is better to make the current system date a dependency to your code, rather than calculating
 it. In this example, we chose to pass it in as an input parameter.
 
 By the way, did you notice the subtle bug that was introduced? `DateTime.UtcNow` has a `DateTimeKind` of `DateTimeKind.Utc`.
@@ -82,7 +85,7 @@ public Task ExecuteAsync(CancellationToken token)
     {
         /// Do work
 
-        // Wait for one minute and try again
+        // Wait for one minute and do some more work
         await Task.Delay(TimeSpan.FromMinutes(1), token);
     }
 }
@@ -98,7 +101,7 @@ public Task ExecuteAsync(IDelayProvider delayProvider, CancellationToken token)
     {
         /// Do work
 
-        // Wait for one minute and try again
+        // Wait for one minute and do some more work
         await delayProvider.DelayAsync(TimeSpan.FromMinutes(1), token);
     }
 }
