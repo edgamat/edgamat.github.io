@@ -18,13 +18,19 @@ doesn't belong.
 
 One principle of the Clean Architecture is to ensure the Domain business logic remains independent
 of any frameworks used by your application. So let's take a look at an ASP.NET Core application. It
-is dependent on several external NuGet packages to handle processing incoming HTTP requests, but a
+is dependent on several external NuGet packages to handle processing incoming HTTP requests, including a
 host of infrastructure concerns like logging, configuration, dependency injection, security, etc.
 
 We want to ensure that none of that (or as little as possible) appears in the Domain business logic
 class library.
 
 ## Define the Domain Entities
+
+Recall the idea behind our application, a Book Warehouse:
+
+- The REST API will provide access to the **Warehouse** of books.
+- Users will be able to query the Warehouse to determine if a **Book** is in stock.
+- Users will be able to create an **Order**.
 
 Let's begin with the most important entity, the **Book**:
 
@@ -79,7 +85,7 @@ public class BookShelf
 It represents the actual quantity of a particular book the warehouse has in stock. It allows
 books to be added to the shelf, and removed.
 
-And finally, we have a third entity, the **Warehouse**:
+Let's also define a third entity, the **Warehouse**:
 
 ```csharp
 public class Warehouse
@@ -105,12 +111,13 @@ For now, the warehouse stores a collection of the books in stock and permits boo
 and placed in the appropriate bookshelf.
 
 None of this code describes how the data will be persisted or how the data will be displayed to a user. Those
-concerns are for other layers of the application. The Domain business logic is simple in its scope.
+concerns are for other layers of the application. The Domain business logic is simple in its scope. We will
+need to add the other capabilities in such a way as the not let the business logic know how they are accomplished.
 
-Notice the validation logic in the Warehouse: `if (quantity <= 0) return "invalid_quantity";`
+For example, notice the validation logic in the Warehouse: `if (quantity <= 0) return "invalid_quantity";`
 
 It doesn't return an English sentence such as "You must provide a quantity greater than zero". that would be
-a concern of the User Interface. For example, the application might not use English. Or it might support
+a concern of the User Interface. Perhaps, the application does not use English. Or it might support
 multiple languages. Striving to keep these details out of the Domain will keep the code free of such dependencies.
 
 ## When to introduce a new Dependency
@@ -152,7 +159,7 @@ This package is dependent upon the following packages:
 `System.Memory`
 `System.Runtime.CompilerServices.Unsafe`
 
-So just in this simple example, by accepting to take on one dependency has made the Domain logic dependent on
+So just in this simple example, taking on one dependency, has made the Domain logic dependent on
 four packages.
 
 Therefore, be careful which dependencies you choose to accept in the Domain logic.You should get into
@@ -194,4 +201,10 @@ of the application and provides the services necessary to convert the representa
 at run-time. I cover [Dependency Injection in another post]({% post_url 2019-08-27-Dependency-Injection-In-ASPNET-Core %}) so I will refer you there if you want to look at it
 in further detail.
 
-# Summary
+## Summary
+
+To fully explore the concept of what the Domain business logic should contain is what this series of posts will attempt to do:
+
+- Constantly focus on the independence of the Domain business logic.
+- Only accept new dependencies after careful consideration.
+- Avoid taking on new dependencies wherever possible.
