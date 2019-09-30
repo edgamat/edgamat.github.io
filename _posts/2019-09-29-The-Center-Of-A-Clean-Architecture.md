@@ -116,7 +116,7 @@ need to add the other capabilities in such a way as the not let the business log
 
 For example, notice the validation logic in the Warehouse: `if (quantity <= 0) return "invalid_quantity";`
 
-It doesn't return an English sentence such as "You must provide a quantity greater than zero". that would be
+It doesn't return an English sentence such as "You must provide a quantity greater than zero". That would be
 a concern of the User Interface. Perhaps, the application does not use English. Or it might support
 multiple languages. Striving to keep these details out of the Domain will keep the code free of such dependencies.
 
