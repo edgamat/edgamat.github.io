@@ -79,7 +79,7 @@ md "$projectName"
 
 # Ensure the SDK is locked in so the solution is independent of other SDK versions
 cd "$projectName"
-dotnet new globaljson --sdk-version 2.2.104
+dotnet new globaljson --sdk-version 3.0.100
 cd ..\
 
 md "$projectName\src"

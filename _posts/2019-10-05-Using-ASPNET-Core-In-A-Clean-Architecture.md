@@ -29,8 +29,17 @@ cd "$projectName\src\$projectName.Api"
 dotnet new webapi --no-restore
 dotnet add reference "..\$projectName.Domain\$projectName.Domain.csproj"
 
+cd ..\..\..\
+
+md "$projectName\test\UnitTests.$projectName.Api"
+cd "$projectName\test\UnitTests.$projectName.Api"
+dotnet new xunit --no-restore
+dotnet add reference "..\..\src\$projectName.Domain\$projectName.Domain.csproj"
+dotnet add reference "..\..\src\$projectName.Api\$projectName.Api.csproj"
+
 cd ..\..\
 dotnet sln add ".\src\$projectName.Api\$projectName.Api.csproj"
+dotnet sln add ".\test\UnitTests.$projectName.Api\UnitTests.$projectName.Api.csproj"
 
 cd ..
 ```
