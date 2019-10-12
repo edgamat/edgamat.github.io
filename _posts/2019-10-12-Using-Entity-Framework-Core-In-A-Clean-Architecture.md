@@ -43,11 +43,11 @@ public interface IBookRepository
 
     IEnumerable<Book> All();
 
-    Insert(Book entity);
+    void Insert(Book entity);
 
-    Update(Book entity);
+    void Update(Book entity);
 
-    Delete(Guid id);
+    void Delete(Guid id);
 }
 ```
 
@@ -71,6 +71,8 @@ cd "$projectName\src\$projectName.Persistence"
 dotnet new classlib --no-restore --framework netcoreapp3.0
 dotnet add reference "..\$projectName.Domain\$projectName.Domain.csproj"
 dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
 # Add a dependency to the API project
 cd "..\$projectName.Api"
@@ -147,13 +149,13 @@ Then our context would look like this:
 ```csharp
 public class WarehouseContext : DbContext
 {
-    public WarehouseContext(DbContextOptions options) :  base(options)
+    public WarehouseContext(DbContextOptions options) : base(options)
     {
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        builder.Entity<Book>(entity =>
+        modelBuilder.Entity<Book>(entity =>
         {
             entity.Property(e => e.ISBN).HasMaxLength(20);
             entity.Property(e => e.Title).HasMaxLength(100);
@@ -188,19 +190,19 @@ public class BookRepository : IBookRepository
         return _context.Set<Book>().ToList();
     }
 
-    public Insert(Book entity)
+    public void Insert(Book entity)
     {
         _context.Set<Book>().Add(entity);
         _context.SaveChanges();
     }
 
-    public Update(Book entity)
+    public void Update(Book entity)
     {
         _context.Set<Book>().Update(entity);
         _context.SaveChanges();
     }
 
-    public Delete(Guid id)
+    public void Delete(Guid id)
     {
         var entity = FindByKey(id);
         _context.Set<Book>().Remove(entity);
