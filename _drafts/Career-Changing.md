@@ -110,6 +110,6 @@ to the work. It made me realize how I need to do better.
 
 ## The Future
 
-I have spent the last year trying to absorb aw mush as I can from these great people. I'll be sad when they, or I,
+I have spent the last year trying to absorb as much as I can from these great people. I'll be sad when they, or I,
 move onto to other things. I can't thank them enough for the opportunity and will hopefully let it reshape my career
 and make me a better developer.
