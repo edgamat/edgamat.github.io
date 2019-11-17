@@ -153,9 +153,67 @@ and syntax highlighting, it also has wonderful regular expression search and rep
 
 ## CI/CD Pipelines
 
+When I first began working with .NET Framework projects, I wanted to automate as much as I could. I had
+read a great book series from the Pragmatic Programmers which included [Pragmatic Project Automation][pragmatic-project-automation], a book describing how to build and deploy Java applications using
+CruiseControl. I was able to adapt the ideas into a series of build scripts using Nant and it
+made it possible to build and deploy software without much difficulty.
+
+In today's world, Continuous Integration (CI) and Continuous Delivery (CD) are the _de facto_ industry
+standards for automating the build and deployment steps for software development. I have used a few
+tools in the past three years and they all work fine. So choosing the tool is not as important as
+actually committing the time to invest in a CI/CD pipeline.
+
+In my experience, it is such a powerful technique that I can't imagine working on a non-trivial
+software development effort without a CI/CD pipeline. It eliminates so much wasted effort. You never have to
+think about getting your code changes into the hands of your users. It all just happens automatically.
+
+Setting up a CI/CD pipeline is by no means trivial. In fact, it can take a significant effort, depending
+on the complexity of the software. For example, setting up a CI/CD pipeline for a single website application
+may only take a day or two. And you have to budget for that time. However, if you are setting up a microservices
+architecture with several services, a lot more planning is necessary and can take a week or more to get up
+and running.
+
+That being said, it is my opinion that this time is well worth it because it will reduce the time necessary
+to get code changes in the hands of your users more than any other technique I know.
+
 ## Refactoring
 
+Refactoring your code is an important activity to eliminate waste. Basically, you use refactoring techniques
+to reduce the amount of code you have:
+
+- Remove code no longer needed.
+- Reuse duplicated code.
+- Remove comments by using clear naming conventions and straightforward, simple coding practices.
+
+I have used JetBrains Resharper in the past and felt it was more trouble than it was worth. Recently I
+have returned to using it, but in a way much more pragmatic to my needs. By biggest complaint was how it slowed
+Visual Studio down to a crawl. I discovered that it was mostly due to how it's intellisense works. So I turned
+off the Resharper intellisense in favor of the Visual Studio defaults. This made things work much smoother.
+
+In Visual Studio 2019, the refactoring tools are much improved (as with each successive version of Visual Studio) and
+it may be possible to forego the use of Resharper and still effectively eliminate waste. But at this present
+time, I find that using JetBrains Rider (with integrated Resharper support) provides the most productive environment
+for seeing waste and eliminating it.
+
 ## Unit Tests
+
+I can't say enough about unit testing. Whether it be test-driven design or simply writing unit tests to demonstrate
+behavior of existing code, it doesn't matter. Simply stated, write the tests. Write as many as necessary to confirm
+the existing behavior of the code. Write tests to your future self to remind them how things work. It can eliminate
+so much waste:
+
+- You can see when changes break existing code (when their tests no longer pass)
+- You can find bugs in your code more quickly (when you explicitly test the behavior)
+- It affects the design of the code making it easier to maintain
+
+I prefer using xUnit, but I have used NUnit and MSTest as well. I don't believe there is a wrong choice
+here. Just write the tests.
+
+## Summary
+
+I have looked at a lot of different aspects of .NET Core and where waste can occur and how to eliminate it. I
+hope this serves me well in the future as I refer back to this post to ensure I continue to eliminate
+waste from my development of .NET Core apps.
 
 [lean-book]: https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783
 [ubiquitous-language]: https://www.agilealliance.org/glossary/ubiquitous-language
@@ -164,3 +222,4 @@ and syntax highlighting, it also has wonderful regular expression search and rep
 [search-replace]: http://www.funduc.com/search_replace.htm
 [winmerge]: https://winmerge.org/
 [textpad]: https://www.textpad.com/
+[pragmatic-project-automation]: https://pragprog.com/book/auto/pragmatic-project-automation
