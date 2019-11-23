@@ -137,7 +137,7 @@ Here are some tasks I would expect you to be able to do with your eyes closed:
 
 You will find that the search and replace functionality in most tools is pretty good. However, sometime
 you will need the ability to search multiple solutions/projects for something. IDEs aren't a good choice
-for that sort of thing. I use a simple tool called [Search and Replace][search-replace] and it has
+for that sort of thing. I use a small tool called [Search and Replace][search-replace] and it has
 served me well for years.
 
 ### WinMerge
@@ -178,12 +178,12 @@ to get code changes in the hands of your users more than any other technique I k
 
 ## Refactoring
 
-Refactoring your code is an important activity to eliminate waste. Basically, you use refactoring techniques
-to reduce the amount of code you have:
+Refactoring your code is an important activity to eliminate waste. Or in other words, you use refactoring
+techniques to reduce the amount of code you have:
 
 - Remove code no longer needed.
 - Reuse duplicated code.
-- Remove comments by using clear naming conventions and straightforward, simple coding practices.
+- Remove comments by using clear naming conventions and straightforward, and follow good coding practices.
 
 I have used JetBrains Resharper in the past and felt it was more trouble than it was worth. Recently I
 have returned to using it, but in a way much more pragmatic to my needs. By biggest complaint was how it slowed
@@ -207,7 +207,7 @@ so much waste:
 - It affects the design of the code making it easier to maintain
 
 I prefer using xUnit, but I have used NUnit and MSTest as well. I don't believe there is a wrong choice
-here. Just write the tests.
+here. Keep writing the tests, the more the better, regardless of the framework.
 
 ## Summary
 

@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 When building a data model using Entity Framework (EF) Core, you can quickly find that the default behavior
-is difficult to maintain. Let's look at a simple way to handle the large number of mapping data.
+is difficult to maintain. Let's look at a better way to handle the large number of mapping data.
 
 <!--more-->
 
@@ -119,7 +119,7 @@ var book = context.Set<Book>.FirstOrDefault(x => x.ISBN == "12345678")
 
 Since they are optional, it is something that a Clean Architecture would consider removing. Maintaining
 these convenience properties can be a chore and don't provide significant value. It means the `DbContext`
-class is kept very simple and doesn't grow in size as the number of classes in the data model increases.
+class is kept clean and doesn't grow in size as the number of classes in the data model increases.
 
 ## Separation of Configuration Data
 
@@ -163,7 +163,7 @@ specific to the application (you own these).
 This is a common situation and if you are using EF Core Migrations to manage the shape of the
 data model, it is important to only include the tables you own when performing migrations.
 
-The simplest way to achieve this flexibility is to pass in the set of configurations to the
+One way to achieve this flexibility is to pass in the set of configurations to the
 `DbContext`, say via a constructor parameter:
 
 ```csharp

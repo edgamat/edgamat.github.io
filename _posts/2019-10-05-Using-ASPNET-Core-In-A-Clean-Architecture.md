@@ -89,7 +89,7 @@ In the `Startup` class, there is a method where you can add this logic:
 void ConfigureServices(IServiceCollection services)
 ```
 
-To add the `Warehouse` construction logic to the application, simply add the following:
+To add the `Warehouse` construction logic to the application, please add the following:
 
 ```csharp
 services.AddScoped<Warehouse>();

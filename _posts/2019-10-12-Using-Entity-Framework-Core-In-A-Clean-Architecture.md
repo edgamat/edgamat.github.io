@@ -17,7 +17,7 @@ is (almost) unaware of it's existence.
 In a Clean Architecture, dependencies go one direction, inwards. Specifically, it is acceptable for the persistence
 logic to be aware of the Domain model, but not the other way around. The database is a technical detail that
 the application uses to store and retrieve data. However, the Domain shouldn't care how it is done and what
-technology is used to implement it. Remember our discussion on taking on dependencies? Well, this is just such
+technology is used to implement it. Remember our discussion on taking on dependencies? Well, this is
 a dependency your Domain should not accept.
 
 In a typical ASP.NET application, or for that matter most applications, the database is at the heart of
@@ -100,7 +100,7 @@ dotnet sln add ".\test\UnitTests.$projectName.Persistence\UnitTests.$projectName
 Notice the new Persistence project. It is not a .NET Standard class library. It is a library based on
 the .NET Core framework. This is necessary in order for us to take advantage of the design-time
 features of EF Core, namely code-first migrations. And of course, notice that none of these additions
-require any changes to the Domain class library. It is unaware that anything has occurred, just what
+require any changes to the Domain class library. It is unaware that anything has occurred, exactly what
 we wanted.
 
 You can use the built-in support to create a database Context:

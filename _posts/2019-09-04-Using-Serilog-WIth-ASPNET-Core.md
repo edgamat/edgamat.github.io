@@ -11,7 +11,7 @@ most logging needs.
 
 <!--more-->
 
-Serilog comes with a dedicated package for ASP.NET Core support. It makes it very easy to setup and
+Serilog comes with a dedicated package for ASP.NET Core support. It makes it easier to setup and
 provides several options for where to send the logging information. My 'default' setup is to store
 the configuration information in the `appsettings.json` and to send the logging output to the console. Once
 this is set up properly, I can start adding more sinks (where the system places log messages).

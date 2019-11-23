@@ -184,7 +184,7 @@ modelBuilder
 ## Implicit Conversions
 
 Instead of explicitly using `v.Value` and `Weight.Create()` to indicate the conversion, you can
-add implicit operators to your Value Object to make things simpler:
+add implicit operators to your Value Object to make things more readable:
 
 ```csharp
 public static implicit operator decimal(Weight value)
@@ -227,7 +227,7 @@ public static Weight operator *(Amount a, decimal b)
 }
 ```
 
-Now the code is even simpler:
+Now the code is more concise:
 
 ```csharp
 // With implicit operators
@@ -237,8 +237,8 @@ Weight totalWeight = book.Weight * quantity;
 ## Summary
 
 Value Objects are an important part of Domain-Driven Design and can replace primitive data types
-in your domain model. This makes your code easier to read and helps encapsulate business rules
-in an easy to maintain manner.
+in your domain model. This makes your code easier to read and helps encapsulate business rules in
+a maintainable manner.
 
 And EF Core supports this by allowing you to declare value conversions when persisting the
 model to the database.

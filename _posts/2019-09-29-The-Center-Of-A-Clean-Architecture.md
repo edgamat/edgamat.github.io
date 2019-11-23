@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 This is the second in a series of posts exploring the use of Clean Architecture principles to
 build an ASP.NET Core REST API application.
 
-In the last post, we created a simple .NET Core solution with a class library for the Domain business
+In the last post, we created a small .NET Core solution with a class library for the Domain business
 logic and a class library for the unit tests covering the business logic.
 
 In this post I want to explore what goes into the Domain business logic. But more specifically, what
@@ -16,7 +16,7 @@ doesn't belong.
 
 <!--more-->
 
-One principle of the Clean Architecture is to ensure the Domain business logic remains independent
+One principle of the Clean Architecture is to ensure the Domain business logic is independent
 of any frameworks used by your application. So let's take a look at an ASP.NET Core application. It
 is dependent on several external NuGet packages to handle processing incoming HTTP requests, including a
 host of infrastructure concerns like logging, configuration, dependency injection, security, etc.
@@ -111,7 +111,7 @@ For now, the warehouse stores a collection of the books in stock and permits boo
 and placed in the appropriate bookshelf.
 
 None of this code describes how the data will be persisted or how the data will be displayed to a user. Those
-concerns are for other layers of the application. The Domain business logic is simple in its scope. We will
+concerns are for other layers of the application. The Domain business logic is small in its scope. We will
 need to add the other capabilities in such a way as the not let the business logic know how they are accomplished.
 
 For example, notice the validation logic in the Warehouse: `if (quantity <= 0) return "invalid_quantity";`
@@ -141,10 +141,10 @@ public class Warehouse
 You may be tempted to allow your Domain entities to be aware of this interface so that these classes may retrieve
 configuration data at run-time. However, that introduces a new dependency.
 
-Introducing a new dependency in .NET applications is very easy. Too easy in fact. You can add a NuGet package
-reference several different ways and you can get yourself into trouble quickly.
+Introducing a new dependency in .NET applications is possible with a single NuGet command, and this is the problem.
+You can add a NuGet package reference several different ways and you can get yourself into trouble quickly.
 
-Most dependencies will come along with their own set of hidden dependencies. So just accepting one NuGet package
+Most dependencies will come along with their own set of hidden dependencies. So accepting one NuGet package
 into your project might make you dependent on several others you didn't know about. Let's say we wanted to
 include a reference to the `IConfiguration` interface. It resides in the following NuGet package:
 
@@ -159,7 +159,7 @@ This package is dependent upon the following packages:
 `System.Memory`
 `System.Runtime.CompilerServices.Unsafe`
 
-So just in this simple example, taking on one dependency, has made the Domain logic dependent on
+In this example, taking on one dependency has made the Domain logic dependent on
 four packages.
 
 Therefore, be careful which dependencies you choose to accept in the Domain logic.You should get into
@@ -195,7 +195,7 @@ It then becomes the responsibility of one of the other layers of the application
 data from the `IConfiguration` representation to the `WarehouseConfiguration` representation. That
 new representation is then passed into the Warehouse class.
 
-This technique is very simple and powerful. But it is only made possible through the use of a
+This technique is very powerful. But it is only made possible through the use of a
 dependency injection framework built-in to ASP.NET Core. This framework is part of the Application Services layer
 of the application and provides the services necessary to convert the representations of the dependencies
 at run-time. I cover [Dependency Injection in another post]({% post_url 2019-08-27-Dependency-Injection-In-ASPNET-Core %}) so I will refer you there if you want to look at it

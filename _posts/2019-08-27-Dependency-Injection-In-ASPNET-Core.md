@@ -22,7 +22,8 @@ Over the past year I have worked on a few ASP.NET Core REST API services and the
 I recommend you read the [Microsoft documentation][ms-di] to learn about how the Microsoft reasons about Dependency Injection
 in ASP.NET Core applications.
 
-The built-in DI container in ASP.NET Core is simple to use and configure. It implements three lifetime styles that allow you to implement a solid DI framework:
+The built-in DI container in ASP.NET Core is a good place to start. Microsoft provides good documentation
+to use and configure it. It implements three lifetime styles that allow you to implement a solid DI framework:
 
 | Name      | Description                                                                                                        |
 | --------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -33,7 +34,7 @@ The built-in DI container in ASP.NET Core is simple to use and configure. It imp
 To configure the DI Container in an ASP.NET Core application, the framework provides a series of extension methods you can use
 within the `ConfigureServices` routine of the `Startup` class.
 
-Here is a simple example of how to configure the DI Container. You have an interface and a concrete implementation of the interface you want to inject
+Here is an example of how to configure the DI Container. You have an interface and a concrete implementation of the interface you want to inject
 into controllers at run-time:
 
 ```csharp

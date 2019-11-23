@@ -18,7 +18,7 @@ I want this new approach to building software to achieve the following goals bef
 
 ## The Principles
 
-These principles are laid out in the book [Clean Architecture][clean-arch-book]:
+These principles are presented in the book [Clean Architecture][clean-arch-book]:
 
 - Be framework independent: Don't allow the core model of your architecture to depend on a framework.
 - Be testable: Ensure the essential business logic of your application can be tested without any external dependencies.

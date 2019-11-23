@@ -26,7 +26,7 @@ To quote the .NET Core documents:
 The ASP.NET Core framework contains a built-in mechanism for configuring the application. I suspect it was born out of the
 need to make it easier to configure web application hosted in Azure. Azure uses environment variables to inject settings into
 the websites it hosts. This makes sense since environment variables are pretty universal, and work well with Windows and Linux
-hosted applications. The built-in mechanism relies on the simple notion that all application settings can be reduced down
+hosted applications. The built-in mechanism relies on the notion that all application settings can be reduced down
 to a set of key value pairs.
 
 Microsoft incorporates a few configuration providers as part of the ASP.NET Core web application framework. By default,
@@ -55,7 +55,7 @@ And you have an environment variable with the same name:
 
 The configuration value loaded into the application will be 25, not 20. The same override can be made via the command line.
 
-This is all laid out in more detail here: [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/)
+This is described in more detail here: [Configuration in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/)
 
 ## Using the Launch Settings
 
@@ -111,7 +111,7 @@ This results in the following values being added to the configuration:
 `PossibleValues:1:Name`  
 `PossibleValues:2:Name`
 
-This is easy enough to override via environment variables:
+This is also possible to override via environment variables:
 
 `PossibleValues:1:Name = "Value42"`
 

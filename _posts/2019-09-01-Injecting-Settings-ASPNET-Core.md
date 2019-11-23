@@ -11,7 +11,7 @@ the DI container for other classes to use. Let me show one way that has worked w
 
 <!--more-->
 
-In this simple example, a class is responsible for returning a set of values. The
+In this example, a class is responsible for returning a set of values. The
 number of values returned by the class is controlled via a configuration setting:
 
 ```csharp
@@ -46,7 +46,7 @@ It injects an instance of `IOptions<ValueSettings>` into the DI Container.
 The `ValueService` requires the DI Container to provide `ValueSettings` rather than `IOptions<ValueSettings>`. The
 second statement creates an additional entry in the DI container for `ValueSettings`.
 
-One might wonder why the `ValueService` doesn't simply accept `IOptions<ValueSettings>` from the DI Container? Well, there are
+One might wonder why the `ValueService` doesn't accept `IOptions<ValueSettings>` from the DI Container? Well, there are
 a couple of reasons. First, it may not be possible to modify the source code that defines `ValueService`. It may be contained in
 an assembly outside of your control. Second, accepting `IOptions<ValueSettings>` from the DI Container requires your service
 class to accept an additional dependency (on `IOptions`). This is what I'd call a 'framework dependency' which is not something you typically want to include in your core domain model. Regardless of your reasons, injecting the `ValueSettings` can be a desirable design.
