@@ -2,6 +2,7 @@
 layout: post
 title: 'Using Serilog with ASP.NET Core'
 author: 'Matthew Edgar'
+pub_date: '2019-09-04'
 excerpt_separator: <!--more-->
 ---
 

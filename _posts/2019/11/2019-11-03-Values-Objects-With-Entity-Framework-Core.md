@@ -2,6 +2,7 @@
 layout: post
 title: 'Avoiding Primitive Obsession with Entity Framework Core'
 author: 'Matthew Edgar'
+pub_date: '2019-11-03'
 excerpt_separator: <!--more-->
 ---
 

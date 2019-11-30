@@ -2,6 +2,7 @@
 layout: post
 title: 'Do I Write Good Tests?'
 author: 'Matthew Edgar'
+pub_date: '2019-11-30'
 excerpt_separator: <!--more-->
 ---
 

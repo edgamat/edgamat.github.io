@@ -2,6 +2,7 @@
 layout: post
 title: 'Time is the Enemy When Testing .NET'
 author: 'Matthew Edgar'
+pub_date: '2019-09-14'
 excerpt_separator: <!--more-->
 ---
 

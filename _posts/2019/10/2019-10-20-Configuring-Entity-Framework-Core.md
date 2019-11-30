@@ -2,6 +2,7 @@
 layout: post
 title: 'Configuring Entity Framework Core'
 author: 'Matthew Edgar'
+pub_date: '2019-10-20'
 excerpt_separator: <!--more-->
 ---
 

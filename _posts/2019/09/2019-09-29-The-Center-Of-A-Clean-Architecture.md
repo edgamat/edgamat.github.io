@@ -2,6 +2,7 @@
 layout: post
 title: 'The Center of a Clean Architecture'
 author: 'Matthew Edgar'
+pub_date: '2019-09-29'
 excerpt_separator: <!--more-->
 ---
 

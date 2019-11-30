@@ -2,6 +2,7 @@
 layout: post
 title: 'Starting a Clean Architecture'
 author: 'Matthew Edgar'
+pub_date: '2019-09-21'
 excerpt_separator: <!--more-->
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: 'Using Entity Framework Core in a Clean Architecture'
 author: 'Matthew Edgar'
+pub_date: '2019-10-12'
 excerpt_separator: <!--more-->
 ---
 

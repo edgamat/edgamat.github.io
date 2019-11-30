@@ -2,6 +2,7 @@
 layout: post
 title: 'Eliminating Waste'
 author: 'Matthew Edgar'
+pub_date: '2019-11-10'
 excerpt_separator: <!--more-->
 ---
 

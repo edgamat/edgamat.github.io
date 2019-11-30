@@ -2,6 +2,7 @@
 layout: post
 title: 'Parsing Enum Values with ASP.NET Core'
 author: 'Matthew Edgar'
+pub_date: '2019-11-24'
 excerpt_separator: <!--more-->
 ---
 

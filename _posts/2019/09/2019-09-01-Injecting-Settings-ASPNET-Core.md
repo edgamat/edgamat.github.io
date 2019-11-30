@@ -2,6 +2,7 @@
 layout: post
 title: 'Injecting Configuration Settings in ASP.NET Core'
 author: 'Matthew Edgar'
+pub_date: '2019-09-01'
 excerpt_separator: <!--more-->
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: 'Eliminating Waste with .NET Core'
 author: 'Matthew Edgar'
+pub_date: '2019-11-17'
 excerpt_separator: <!--more-->
 ---
 

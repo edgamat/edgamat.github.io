@@ -5,6 +5,7 @@ email: edgamat@outlook.com
 description: A blog about software development ideas
 author: 'Matthew Edgar'
 show_excerpts: true
+# paginate_path: '/blog/page:num/'
 # paginate: 3
 
 minima:
@@ -15,3 +16,10 @@ minima:
 # Octopress
 post_ext: md
 page_ext: html
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  excerpt_only: true

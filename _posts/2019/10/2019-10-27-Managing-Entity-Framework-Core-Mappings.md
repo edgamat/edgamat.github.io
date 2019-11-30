@@ -2,6 +2,7 @@
 layout: post
 title: 'Managing Entity Framework Core Mappings'
 author: 'Matthew Edgar'
+pub_date: '2019-10-27'
 excerpt_separator: <!--more-->
 ---
 

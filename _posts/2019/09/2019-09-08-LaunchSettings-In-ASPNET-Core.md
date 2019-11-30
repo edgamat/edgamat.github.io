@@ -2,6 +2,7 @@
 layout: post
 title: 'Launch Settings with ASP.NET Core'
 author: 'Matthew Edgar'
+pub_date: '2019-09-08'
 excerpt_separator: <!--more-->
 ---
 

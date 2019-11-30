@@ -3,6 +3,7 @@ layout: post
 title: 'Using ASP.NET Core in a Clean Architecture'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
+pub_date: '2019-10-05'
 ---
 
 Having Domain business logic in an application is the first step in building with a Clean Architecture. Now
