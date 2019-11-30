@@ -198,7 +198,7 @@ new representation is then passed into the Warehouse class.
 This technique is very powerful. But it is only made possible through the use of a
 dependency injection framework built-in to ASP.NET Core. This framework is part of the Application Services layer
 of the application and provides the services necessary to convert the representations of the dependencies
-at run-time. I cover [Dependency Injection in another post]({% post_url 2019-08-27-Dependency-Injection-In-ASPNET-Core %}) so I will refer you there if you want to look at it
+at run-time. I cover [Dependency Injection in another post]({% post_url 2019/08/2019-08-27-Dependency-Injection-In-ASPNET-Core %}) so I will refer you there if you want to look at it
 in further detail.
 
 ## Summary
