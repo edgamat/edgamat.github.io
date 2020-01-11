@@ -17,16 +17,16 @@ of the lessons we have learned along the way.
 One area where we had a lot of regression bugs crop up is the code used to translate incoming JSON
 payloads to domain classes. Everything would look okay until we ran an integration test and then
 we'd find that a value in the incoming JSON payload (say for a POST or PUT endpoint) would not
-be present in the mapped domain object. We call the incoming JSON payload the Contract Model.
+be present in the mapped domain object. I prefer to call the incoming JSON payload the Contract Model.
 
 This was an issue worth creating explicit unit tests around because it would cause a lot of 
 waste. The missing values were difficult to catch and usually only caught far after the code 
-changes had been made. And sometimes the missing data was due to errors in the business logic,
+changes had been deployed. And sometimes the missing data was due to errors in the business logic,
 not the translation code.
 
-Our solution for this issue was to add unit tests on the mapping logic and test that each property
+Our solution for this issue was to add unit tests covering the mapping logic and test that each property
 in the domain object contained a non-default value coming out of the mapping function that converted
-the a contract model object into a domain object. Once we had these tests passing for all existing properties,
+a contract model object into a domain object. Once we had these tests passing for all existing properties,
 here is the process we used to make changes:
 - Modify the contract model to reflect the new changes
 - Add a new property to the domain class, or change the name of an existing one
@@ -54,7 +54,6 @@ public class UpdateContractRequestModel
 And the corresponding domain model is this:
 
 ```csharp
-[DataContract]
 public class UpdateCommand
 {
     public Guid Id { get; set; }
@@ -79,7 +78,7 @@ public UpdateCommand CreateCommand(UpdateContractRequestModel model)
 ```
 
 The bug in the function is that the `MailedOn` date is not mapped and the resulting domain object
-is set to the default value.
+value for `MailedOn` is set to a default value.
 
 We constructed unit tests to catch these errors:
 
@@ -89,7 +88,12 @@ public void EnsureTranslationIsCorrect()
 {
     var sut = CreateTestSubject();
     
-    var model = new UpdateContractRequestModel { Id = Guid.NewGuid();, Name = "test", MailedOn = DateTime.Today };
+    var model = new UpdateContractRequestModel 
+    { 
+        Id = Guid.NewGuid(), 
+        Name = "test", 
+        MailedOn = DateTime.Today 
+    };
     
     var result = sut.CreateCommand(model);
     
@@ -107,7 +111,7 @@ where we relied on the test cases to catch these mapping issues.
 
 In some cases, the unit test would expect to fail but would pass. This was due to how the assertions were dealing with `null` values.
 If the incoming model had a null value for a property, the domain object would also have a null value. To avoid this, we 
-began using explicit values if a null was present in the domain object:
+began returning explicit values if a null was present in the domain object property:
 
 ```csharp
 [Fact]
@@ -115,7 +119,11 @@ public void EnsureTranslationIsCorrect()
 {
     var sut = CreateTestSubject();
     
-    var model = new UpdateContractRequestModel { Id = Guid.NewGuid();, Name = null, MailedOn = DateTime.Today };
+    var model = new UpdateContractRequestModel 
+    { 
+        Id = Guid.NewGuid(), 
+        MailedOn = DateTime.Today 
+    };
     
     var result = sut.CreateCommand(model);
     
@@ -124,7 +132,7 @@ public void EnsureTranslationIsCorrect()
     Assert.Equal(model.MailedOn, result.MailedOn);
 }
 ```
-Now if the mapping function under test changes and the `Name` property is not set, we'll be notified.
+Now if the mapping function under test changes and the `Name` property is not set, the test will fail ("test" != "MISSING").
 
 ## Issues and Observations
 
