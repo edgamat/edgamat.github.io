@@ -176,3 +176,14 @@ var result = Assert.IsType<BadRequestObjectResult>(actionResult);
 dynamic badRequestData = result.Value;
 Assert.Equal("expected-error", badRequestData.TheErrors[0]);
 ```
+
+## Issues and Observations
+
+As a lesson learned, I recommend spending time refactoring a controller method and 
+remove all but the essential responsibilities. This makes testing the methods mush easier
+or sometimes not necessary at all.
+
+When testing controllers, be as explicit as possible. Ensure to assert the contents of the results
+are correct where possible. This guards against false negatives which can keep bugs
+hidden from tests.
+
