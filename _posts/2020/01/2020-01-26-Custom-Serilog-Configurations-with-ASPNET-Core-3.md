@@ -2,7 +2,6 @@
 layout: post
 title: 'Custom Serilog Configurations with ASP.NET Core 3'
 author: 'Matthew Edgar'
-published: false
 excerpt_separator: <!--more-->
 ---
 
