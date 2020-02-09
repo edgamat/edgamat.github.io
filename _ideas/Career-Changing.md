@@ -1,3 +1,5 @@
+## Nov 1, 2019
+
 The past year I have had the good fortune of working for a client on several projects.
 
 The work has been very challenging and very rewarding. I told my boss that it was a career-changing
@@ -104,7 +106,7 @@ me in others. It was humiliating to submit a bunch of code I was proud of, only 
 through the eyes of more capable people. And they were right. My code was not as good as it could be. It had all my
 biases and flaws of years working in a bubble.
 
-But these folks were compassionate and helpful with their feedback. That's not to say we say eye-to-eye on everything.
+But these folks were compassionate and helpful with their feedback. That's not to say we saw eye-to-eye on everything.
 And we got into heated debates on more than one occasion. But it changed the way I see myself. It changed my approach
 to the work. It made me realize how I need to do better.
 
