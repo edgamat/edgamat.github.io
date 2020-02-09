@@ -80,7 +80,6 @@ Assert.EndsWith("HI", actual);
 Assert.Contains("EF", actual);
 Assert.Equal(9, actual.Length);
 
-
 // Option 2
 actual.Should().StartWith("AB").And.EndWith("HI").And.Contain("EF").And.HaveLength(9);
 ```
