@@ -38,10 +38,14 @@ occurred. This test double is a mock.
 
 Demo
 
-Repository -> stub
+Repository -> stub  
 Logger -> mock
 
 ### False Positives and False Negatives
+
+A **false positive** is a false alarm. The code still behaves correctly, but a change in the code has caused a test to fail.
+
+A **false negative** is when a change in the code has introduced a bug but the test(s) still pass.
 
 Demo
 
