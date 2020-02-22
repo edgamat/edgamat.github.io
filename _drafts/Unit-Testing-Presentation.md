@@ -51,13 +51,36 @@ Demo
 
 ## What is Good Unit Test?
 
-### Protect against regressions
+A good unit test has the following four attributes:
+- Protection against regressions
+- Resistance to refactoring
+- Fast feedback
+- Maintainability
+
+### Protection against regressions
+
+- A _regression_ is a software bug
+- When a feature stops working after a modification to the code
+- Maximize by having tests exercise as much code as possible
 
 ### Resistance to refactoring
 
-### Fast feedback
+- Tests don't fail when the underlying code is refactored (false positives)
+- Don't depend on implementation details
+- Verify the end result, not the steps to get there
 
-### Maintainability
+![Test Relationships](/assets/img/test-relationships.png)
+
+Source: Figure 4.3
+_Unit Testing: Principles, Practices, and Patterns_
+
+
+### Fast feedback & Maintainability
+
+- Run tests quickly
+- Write maintainable tests:
+    - easy to understand
+    - easy to run
 
 ## Lessons Learned
 
@@ -67,11 +90,24 @@ Demo
 
 ### Fluent Assertions
 
-### Focus on Behavior
+### Focus on Behavior, Be Explicit
 
-### Avoid using Collaborators
+### Use Code Coverage Tools
+
+- NCover, dotCover
+- Easy to spot areas of the code lacking unit tests
+- Don't focus on percentages too much (at first)
+
+Demo
 
 ## Is it worth it?
+
+- Having a good coverage of automated tests is worth the effort
+- You have to include testing with all your estimates
+- After a few iterations, you won't be able to separate coding
+  time from testing time.
+
+## Practice Makes Perfect
 
 - Make a small set of changes
 - Confirm the new behavior with a reasonable set of unit tests
