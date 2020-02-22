@@ -20,26 +20,22 @@ A unit test is an automated test that
 
 ### Test Doubles - Stub vs. Mock
 
-A test double is a piece of code used to replace
+A **test double** is a piece of code used to replace
 a class's dependencies when executing unit tests. Test doubles can
 help make tests easier to maintain and set up. 
 
-A stub is a test double that fakes the behavior of a dependency.
-A mock is a test double that a unit test will inspect to determine
+A **stub** is a test double that fakes the behavior of a dependency.  
+A **mock** is a test double that a unit test will inspect to determine
 if a test was successful.
 
-Examples:
-The SUT retrieves data from a test double in order to execute
-the test. This test double is a stub.
-
-The SUT changes the state of a test double. The test then inspects
+Examples:  
+- The system under test (SUT) retrieves data from a test double in order to execute
+the test. This test double is a **stub**.
+- The SUT changes the state of a test double. The test then inspects
 the test double (with assertions) to confirm the correct behavior
-occurred. This test double is a mock.
+occurred. This test double is a **mock**.
 
-Demo
-
-Repository -> stub  
-Logger -> mock
+<font color="#f00">Demo</font>
 
 ### False Positives and False Negatives
 
@@ -47,7 +43,8 @@ A **false positive** is a false alarm. The code still behaves correctly, but a c
 
 A **false negative** is when a change in the code has introduced a bug but the test(s) still pass.
 
-Demo
+<font color="#f00">Demo</font>
+
 
 ## What is Good Unit Test?
 
@@ -74,6 +71,7 @@ A good unit test has the following four attributes:
 Source: Figure 4.3
 _Unit Testing: Principles, Practices, and Patterns_
 
+<font color="#f00">Demo</font>
 
 ### Fast feedback & Maintainability
 
@@ -83,22 +81,25 @@ _Unit Testing: Principles, Practices, and Patterns_
     - easy to run
 
 ## Lessons Learned
-
+ 
 ### Helper Functions
+<font color="#f00">Demo</font>
 
 ### Refactor, Refactor, Refactor
+<font color="#f00">Demo</font>
 
 ### Fluent Assertions
+<font color="#f00">Demo</font>
 
 ### Focus on Behavior, Be Explicit
+<font color="#f00">Demo</font>
 
 ### Use Code Coverage Tools
+<font color="#f00">Demo</font>
 
 - NCover, dotCover
 - Easy to spot areas of the code lacking unit tests
 - Don't focus on percentages too much (at first)
-
-Demo
 
 ## Is it worth it?
 
