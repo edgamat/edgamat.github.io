@@ -13,8 +13,8 @@ Creating unit tests will guard against these issues making it easier to make cha
 
 ## Concepts
 
-A unit test is an automated test that
-- Verifies a small piece of code (also known as a unit),
+A **unit test** is an automated test that
+- Verifies a small piece of code (also known as a **unit**),
 - Does it quickly,
 - And does it in an isolated manner.
 
@@ -36,7 +36,7 @@ the test double (with assertions) to confirm the correct behavior
 occurred. This test double is a **mock**.
 
 <font color="#f00">Demo</font>
-
+<!--
 ### False Positives and False Negatives
 
 A **false positive** is a false alarm. The code still behaves correctly, but a change in the code has caused a test to fail.
@@ -44,6 +44,7 @@ A **false positive** is a false alarm. The code still behaves correctly, but a c
 A **false negative** is when a change in the code has introduced a bug but the test(s) still pass.
 
 <font color="#f00">Demo</font>
+ -->
 
 
 ## What is Good Unit Test?
@@ -71,8 +72,6 @@ A good unit test has the following four attributes:
 Source: Figure 4.3
 _Unit Testing: Principles, Practices, and Patterns_
 
-<font color="#f00">Demo</font>
-
 ### Fast feedback & Maintainability
 
 - Run tests quickly
@@ -80,7 +79,7 @@ _Unit Testing: Principles, Practices, and Patterns_
     - easy to understand
     - easy to run
 
-## Lessons Learned
+## Lessons Learned Coding
  
 ### Helper Functions
 <font color="#f00">Demo</font>
@@ -92,6 +91,11 @@ _Unit Testing: Principles, Practices, and Patterns_
 <font color="#f00">Demo</font>
 
 ### Focus on Behavior, Be Explicit
+<font color="#f00">Demo</font>
+
+## Lessons Learned Designing
+
+### Use Automated End-2-End Tests
 <font color="#f00">Demo</font>
 
 ### Use Code Coverage Tools
@@ -114,3 +118,23 @@ _Unit Testing: Principles, Practices, and Patterns_
 - Confirm the new behavior with a reasonable set of unit tests
 - Share your code with others
 
+
+
+
+
+
+A powerful take away from reading your book for me was the idea that how the code is designed has a significant impact on the unit tests written to support that code. So I have to ask the question, “Are the mocks I am using in my tests necessary, or a side-affect of how I have written the code?”
+
+On a current project, I tried an experiment. I took a set of unit tests and removed all test doubles except the single out-of-process dependency (an EF Core DbContext class). I immediately discovered a good number of the tests no longer worked. This was due to how often the test were verifying implementation details (using the “Verify” function with Moq) which would no longer work with the real classes. 
+
+So I refactored all the tests to stick to only asserting on observable behavior. That too caused other problems since some tests could not observe the behavior directly. So I questioned if these tests were necessary at all. 
+
+I found that several of them were indeed necessary. I refactored the domain classes to be more functional in nature with fewer side effects. This made the unit tests much easier to write.  
+
+ 
+
+I think this is very true when seeing folks adopt a London or Classical approach.
+
+As you pointed out, using mocks to avoid creating a large object graph is probably a warning side that the code isn’t designed as well as it should be. 
+
+And I must agree with your assessment; if your domain model is overly complex due to header interfaces, its probably time to refactor to a simpler design. The resulting unit tests will be of higher quality because the underlying code is as well.
