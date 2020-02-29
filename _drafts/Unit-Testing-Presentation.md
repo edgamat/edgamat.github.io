@@ -93,6 +93,12 @@ _Unit Testing: Principles, Practices, and Patterns_
 ### Focus on Behavior, Be Explicit
 <font color="#f00">Demo</font>
 
+### Testing Database Calls
+<font color="#f00">Demo</font>
+
+## Testing HTTP Calls
+<font color="#f00">Demo</font>
+
 ## Lessons Learned Designing
 
 ### Use Automated End-2-End Tests
