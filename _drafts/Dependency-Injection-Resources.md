@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 Here are some resources I found useful while researching a presentation on Dependency Injection.
 
 Explicit Dependencies Principle

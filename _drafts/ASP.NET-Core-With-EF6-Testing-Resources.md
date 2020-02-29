@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 Here are some links I found useful while researching a presentation for unit testing with EntityFramework.
 
 Getting Started with ASP.NET Core and Entity Framework 6
