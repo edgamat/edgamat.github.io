@@ -42,14 +42,17 @@ interface IAccountingService
 var mockObject = new Mock<IAccountingService>();
 
 mockObject
-    .Setup(x => x.Register("test"))
+    .Setup(x => x.Register("userName"))
     .Returns(true);
     
 var service = mockObject.Object;
 
-var result = service.Register("test");
+var controller = new AccountingController(service);
 
-Assert.True(result);
+var result = controller.RegisterUser("userName");
+
+mockObject
+    .Verify(x => x.Register("userName"), Times.Once);
 ```
 
 And an example of a Test Stub:
