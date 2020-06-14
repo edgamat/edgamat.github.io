@@ -15,7 +15,7 @@ If a piece of code has no covering unit tests, it is important to add tests that
 
 When I am adding tests for existing code, I usually write the test case with the knowledge of the observed behavior. So my tests pass immediately because I know how the code behaves. However this is a flawed testing strategy because these tests are biased towards examples that show how I _think_ the code behaves. 
 
-It is the common in the software development industry to hear people say that developers make poor testers of their own code. The reasons for this include our bias towards the 'positive' scenarios, and less towards how the code might break. We can be blind to this part of the code and it can have a great influence over how we write unit tests. 
+It is common in the software development industry to hear people say that developers make poor testers of their own code. The reasons for this include our bias towards the 'positive' scenarios, and less towards how the code might break. We can be blind to parts of the code with flaws and it can have a great influence over how we write unit tests. 
 
 In other words, this bias increases the chance that the unit tests aren't testing to right thing. To combat against this bias, I need to _confirm the test fails_.
 
