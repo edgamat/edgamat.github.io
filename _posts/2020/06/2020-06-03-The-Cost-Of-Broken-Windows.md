@@ -5,13 +5,13 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-In the book [The Pragmatic Programer][pragprog] I was first exposed to the idea of "broken windows theory" and how it impacts the life of a software product. I was reminded of that this week and it is still an important concept to consider in software development.
+In the book [The Pragmatic Programmer][pragprog] I was first exposed to the idea of "broken windows theory" and how it impacts the life of a software product. I was reminded of that this week and it is still an important concept to consider in software development.
 
 <!--more-->
 
 ## The Theory
 
-The [broken windows theory][theory] that states that visible signs of neglect, e.g. broken windows on a house, encourages further neglect. In _The Pragmatic Programer_, the authors suggest that programmers need to fix bugs, bad choice, bad designs, etc. and not leave them unrepaired.
+The [broken windows theory][theory] that states that visible signs of neglect, e.g. broken windows on a house, encourages further neglect. In _The Pragmatic Programmer_, the authors suggest that programmers need to fix bugs, bad choice, bad designs, etc. and not leave them unrepaired.
 
 When I look at a codebase for the first time, I have my own set of (admittedly biased) options on the quality of the code. For example, I clone a repo of C# code and compile the code. If I can do that without any compile issues, all dependencies are found and, well, it just works, then I am left thinking the code is in good shape. This occurs less often than I'd like. Most of the time, you'll encounter some problem that prevents you from getting a code base installed on a new workstation.
 
