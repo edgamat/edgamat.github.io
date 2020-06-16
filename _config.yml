@@ -1,10 +1,11 @@
-# theme: jekyll-theme-basically-basic
-remote_theme: jekyll/minima
+theme: minima
+# remote_theme: jekyll/minima
 title: Span of Reference
 email: edgamat@outlook.com
 description: A blog about software development ideas
 author: 'Matthew Edgar'
 show_excerpts: true
+
 # paginate_path: '/blog/page:num/'
 # paginate: 3
 

@@ -1,12 +1,27 @@
 ---
-published: false
+layout: post
+title: 'Unit Testing Presentation'
+author: 'Matthew Edgar'
+excerpt_separator: <!--more-->
 ---
 
-# Unit Testing Lessons Learned
+## Better Unit Testing - Lessons Learned
+
+We spend a lot of time writing unit tests for projects. It is important to do a good job or else it is a lot of wasted effort.
+
+I have been fortunate to work on a project that prioritizes unit testing and I have learned some valuable lessons.
+
+I'd like to share these lessons with you so that you too can benefit from the experiences I had learning to write better unit tests.
+
+I hope it will inspire you to create more valuable unit tests for your projects 
+
+<!--more-->
 
 ## What is the Goal of Unit Testing?
 
 > The goal is to enable **_sustainable_** growth of the software project
+
+![Test Goals](/assets/img/test-goals.png)
 
 Without careful attention, over time the amount of disorder in the software will grow. With more disorder, you will spend more time fixing problems than making progress:
 
@@ -21,6 +36,8 @@ A **unit test** is an automated test that
 - Verifies a small piece of code (also known as a **unit**),
 - Does it quickly,
 - And does it in an isolated manner.
+
+A 'small piece of code' may represent a function, a property, an entire class, or a small set of classes. It depends entirely on the context. 
 
 ### Test Doubles - Stub vs. Mock
 
@@ -39,8 +56,16 @@ the test. This test double is a **stub**.
 the test double (with assertions) to confirm the correct behavior
 occurred. This test double is a **mock**.
 
-<font color="#f00">Demo</font>
-<!--
+NOTE: When testing a method on a class, it is not required that all class dependencies be test doubles. It is acceptable for more than one 'real' class be used in a unit test. Granted this is rarely necessary, but don't feel like you must create test doubles for everything. It can lead to a lot of un-necessary code.
+
+Case Study:
+
+AutoMapper is a C# library that can convert one class to another using a set of transformation rules. We used AutoMapper on a project to map incoming request payloads to domain objects. In our test classes, we used test stubs to simulate the AutoMapper `Map` functions. This made it possible to avoid using AutoMapper directly in our tests. We felt it was difficult to configure AutoMapper in our tests and it seemed to run slowly as well.
+
+All seemed fine but more and more a similar pattern would occur. We'd have all our tests passing, but the system would crash when deployed to our integration environment. The errors were due to changes in the rules used to transform the classes. If we changed the rules, we didn't go into all the unit tests and update our test stubs to match the new behavior. 
+
+So tests would still pass, even though the code would fail when actually put to use. These are 'false negatives' and caused us a  lot of grief. 
+
 ### False Positives and False Negatives
 
 A **false positive** is a false alarm. The code still behaves correctly, but a change in the code has caused a test to fail.
@@ -48,7 +73,6 @@ A **false positive** is a false alarm. The code still behaves correctly, but a c
 A **false negative** is when a change in the code has introduced a bug but the test(s) still pass.
 
 <font color="#f00">Demo</font>
- -->
 
 
 ## What is Good Unit Test?
