@@ -9,10 +9,8 @@ show_excerpts: true
 # paginate_path: '/blog/page:num/'
 # paginate: 3
 
-minima:
-  social_links:
-    twitter: edgamat
-    github: edgamat
+twitter_username: edgamat
+github_username: edgamat
 
 # Octopress
 post_ext: md
