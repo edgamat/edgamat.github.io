@@ -68,7 +68,7 @@ More formally, this was the way we saw our code:
 - Code that makes decisions (the tennis balls)
 - Code that acts on those decisions
 
-**Code that makes decisions** should be expressed as pure functions, wherever possible. This is ths most important code in your application; it's what makes your application work value to the project stakeholders. You want to make it as easy to understand and test as possible.
+**Code that makes decisions** should be expressed as pure functions, wherever possible. This is ths most important code in your application; it's what makes your application worth value to the project stakeholders. You want to make it as easy to understand and test as possible.
 
 **Code that acts on those decisions** converts the output from the pure functions into the observable behavior of your application. Namely, data in the database and interactions in the application UI.
 

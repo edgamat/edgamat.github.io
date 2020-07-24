@@ -115,12 +115,14 @@ public IActionResult UpdateCustomer(int id, [FromBody] model)
 {
     if (id == 0)
     {
+        _logger.LogWarning("Customer Not Found"));
         return NotFound();
     }
     
     var customer = _service.GetCustomer(id);
     if (customer == null)
     {
+        _logger.LogWarning("Customer Not Found"));
         return NotFound();
     }
 }
@@ -133,16 +135,20 @@ public IActionResult UpdateCustomer(int id, [FromBody] model)
 {
     if (id == 0)
     {
+        _logger.LogWarning("Customer Not Found: Invalid ID"));
         return NotFound("invalid-id");
     }
     
     var customer = _service.GetCustomer(id);
     if (customer == null)
     {
+        _logger.LogWarning("Customer Not Found: Unknown Customer: {id}", id));
         return NotFound("unknown-customer");
     }
 }
 ```
+
+Each return value is unique as well as the log messages and templates. This makes it much easier to determine what occurred.
 
 ### Review and Revise
 

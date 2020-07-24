@@ -23,7 +23,7 @@ In other words, this bias increases the chance that the unit tests aren't testin
 
 The technique I use is to write the unit test based on the observed behavior. I can see the test passes (that 'positive' scenario again). Then I modify the existing behavior of the code in a way that _should_ cause the unit test to fail. When I re-run the test(s) and I don't see the expected failures, I know I have not tested the right thing.
 
-I'm not going lie, it can be very disheartening to modify a piece of code that results in no failing tests. When this happens (and it does more often than I'd like to admit) it is a clear demonstration of the quality of your test suite. Or rather, the lack thereof. 
+I'm not going lie, it can be very disheartening to modify a piece of code that results in no failing tests when I expected it to fail. When this happens (and it does more often than I'd like to admit) it is a clear demonstration of the quality of your test suite. Or rather, the lack thereof. 
 
 However, this confirmation of a test's ability to 'test the right thing' is a powerful thing. It amplifies my confidence that the test is adding value to the overall code quality. And when I don't see the test fail as I expect it to, correcting the test, or the code, is much easier since I am much more familiar with the current context than I would be days or weeks later when a bug is reported in the code. 
 
