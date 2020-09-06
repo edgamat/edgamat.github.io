@@ -28,3 +28,13 @@ defaults:
       path: 'assets/img'
     values:
       image: true
+
+twitter:
+  username: edgamat
+  card: summary
+
+social:
+  name: Matthew Edgar
+  links:
+    - https://twitter.com/edgamat
+    - https://github.com/edgamat
