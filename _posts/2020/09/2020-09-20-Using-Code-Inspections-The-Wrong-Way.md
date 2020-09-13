@@ -3,6 +3,7 @@ layout: post
 title: 'Using Code Inspections the Wrong Way'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
+published: false
 ---
 
 Modern IDE tools provide a wealth of productivity features including automated code inspections. These analysis tools run in the background and give you advice (suggestions) or raise warnings (or errors) when they discover a problem. How you react to them is important. Let's see how not to do it.
