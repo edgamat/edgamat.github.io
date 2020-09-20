@@ -3,7 +3,6 @@ layout: post
 title: 'Using Code Inspections the Wrong Way'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
-published: false
 ---
 
 Modern IDE tools provide a wealth of productivity features including automated code inspections. These analysis tools run in the background and give you advice (suggestions) or raise warnings (or errors) when they discover a problem. How you react to them is important. Let's see how not to do it.
@@ -20,9 +19,9 @@ The end result in either case is that you have a number of ways for your IDE to 
 
 ### The Wrong Way
 
-So here is what not to do. Ignore these inspections. Or worse yet, assume they all are applicable to your code and need to be 'fixed'.
+So here is what not to do. 1) Ignore these inspections. Or worse yet, 2) assume they all are applicable to your code and need to be adhered to 100% of the time.
 
-Ignoring these inspection results can be very easy. After all, they are just 'suggestions'. But ignore them at your on peril. These inspections are included by JetBrains and Microsoft for good reasons. They are issues with the code that typically will cause problems. So it is important to recognize they are present in your code base and to have a plan to address them.
+It can be very easy to ignore these inspection results. After all, they are just 'suggestions'. But ignore them at your own peril. These inspections are included by JetBrains and Microsoft for good reasons. They are issues with the code that typically will cause problems. So it is important to recognize they are present in your code base and to have a plan to address them.
 
 At the opposite end of the spectrum, you could review each and every suggestion, hint and warning and 'fix' them all so the code inspections do not find any issues with the code. In my opinion, this is just as wrong of an approach as ignoring them.
 
@@ -32,9 +31,9 @@ I believe a better approach to dealing with the code inspection results is to un
 
 Let's take Resharper for an example. For most of the code inspection issues, it provides a "Why is Resharper Ultimate suggesting this?" context menu option. Selecting this menu option brings up a web page with an explanation of the rule and why it is important to consider. This page can also give you options for how to remove the issue or to disable the warning in your code.
 
-I have been guilty of ignoring code inspection suggestions/warnings. And I've also somewhat blindly changed code based on code inspection warnings without fully understanding what they mean. So this 'better way' is not something that is a perfect solution either. But I feel it is a good way to start.
+I have been guilty of ignoring code inspection suggestions/warnings. And I've also somewhat blindly changed code based on code inspection warnings without fully understanding what they mean. So this 'better way' I speak of is not a perfect solution either. But I feel it is a good way to start.
 
-So look at each issue and do the necessary research to decide if it is something you should be concerned with in your context.
+Look at each issue and do the necessary research to decide if it is something you should be concerned with in your context.
 
 ### Involve Everyone
 
