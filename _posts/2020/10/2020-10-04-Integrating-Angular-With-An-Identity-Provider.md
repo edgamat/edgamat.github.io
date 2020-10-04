@@ -16,11 +16,18 @@ An important aspect of securing your Angular app is choosing an Identity Provide
 **IdentityServer4**  
 [https://identityserver4.readthedocs.io/](https://identityserver4.readthedocs.io/)
 
+**NOTE:** IdentityServer4 will no longer be a free product (as of Oct 1st 2020):  
+[https://duendesoftware.com/products/identityserver](https://duendesoftware.com/products/identityserver)
+
 **Auth0**  
 [https://auth0.com/authenticate/angular/auth0/](https://auth0.com/authenticate/angular/auth0/)
 
 **Okta**  
 [https://developer.okta.com/code/angular/](https://developer.okta.com/code/angular/)
+
+**OpenIddict**  
+[https://github.com/openiddict](https://github.com/openiddict)  
+[https://docs.orchardcore.net/en/dev/docs/reference/modules/OpenId/](https://docs.orchardcore.net/en/dev/docs/reference/modules/OpenId/)
 
 ### Courses/Tutorials
 
