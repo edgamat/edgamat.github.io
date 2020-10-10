@@ -3,9 +3,8 @@ layout: post
 title: 'Prototype Versus Mockup'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
-published: false
 ---
- 
+  
 Some people use the terms prototype and mockup interchangeably. In my mind, these are two different concepts and serve slightly different needs. 
  
 <!--more-->
@@ -20,7 +19,7 @@ In the world of software development, I feel that a mockup is a static or intera
 
 A prototype is a working piece of software. A prototype is built as a means of learning something about the final product you are trying to build. You may want to learn about the challenges involved, in order to come up with planning estimates. Or you may want to learn about how to use a tool, or set of tools, to create the software. Or you may want to create a guide for others to use when developing the 'real' application.
 
-A vertical prototype is one where you build out a portion of the application, through all the layers. For example, you may build a web page that calls a backend server which in turn calls a database to manipulate the data. This style or prototype can be helpful in defining the interfaces between the layers and the way your architecture may be developed.
+A vertical prototype is one where you build out a portion of the application, through all the layers. For example, you may build a web page that calls a backend server which in turn calls a database to manipulate the data. This style of prototype can be helpful in defining the interfaces between the layers and the way your architecture may be developed.
 
 A horizontal prototype is one where you build out a thin slice in one layer of the application. This typically means building out a series of web pages that demonstrate the user experience and behavior. It can really help define the cope of the UI work necessary to build out the solution. 
 
