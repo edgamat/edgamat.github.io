@@ -3,7 +3,7 @@ The Law of Operational Necessity
 
 At some point in the lifetime of an application, it will be necessary to diagnose issues in production without having access to the source code
 
-The Law of Refactoring
+The Theory of Agile Refactoring
 
 Good refactoring ideas from your current Sprint are less likely to be acted upon in the next Sprint
 
