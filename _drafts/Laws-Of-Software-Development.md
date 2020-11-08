@@ -1,3 +1,10 @@
+---
+layout: post
+title: 'Laws of Software Development'
+author: 'Matthew Edgar'
+excerpt_separator: <!--more-->
+published: false
+---
 
 The Law of Operational Necessity
 
