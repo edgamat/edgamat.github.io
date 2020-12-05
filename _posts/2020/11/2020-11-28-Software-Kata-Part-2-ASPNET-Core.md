@@ -36,3 +36,5 @@ In this context, what will be my domain? I have a set of three readings of the e
 ### Summary
 
 Integrating an HTTP API with an Angular app is a very common use case. This kata is meant to practice creating such a service. I should be able to create one from scratch quickly and properly.
+
+[kata]: https://en.wikipedia.org/wiki/Kata_(programming)
