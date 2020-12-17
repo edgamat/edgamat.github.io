@@ -33,7 +33,7 @@ MyApp.Domain | To store the core business logic of the application
 MyApp.Persistence | To implement logic to persist data to and retrieve data from a data store.
 MyApp.Api | To implement an HTTP API for callers to make requests to the microservice.
 
-**NOTE** There is no universally-accepted guidance on how to split these into separate projects/assemblies. Some teams feel each deserves its own project, while others don't. However you may feel about this aspect of your application, the important thing to remember is to keep proper independence of each concern. Any mixing of these concepts in the code makes achieving the benefits of a Clean Architecture difficult.
+**NOTE** There is no universally-accepted guidance on how to split these into separate projects/assemblies. Some teams feel each deserves its own project, while others don't. Whatever your preference, the important thing to remember is to keep proper independence of each concern. Any mixing of these concepts in the code makes achieving the benefits of a Clean Architecture difficult.
 
 ### HTTP Requests
 
@@ -126,7 +126,7 @@ public interface IDateTimeProvider
 }
 ```
 
-Again, it is not a huge difference, but it helps divorce your Domain logic from the the frameworks set up by the operating system.
+Again, it is not a huge difference, but it helps divorce your Domain logic from the frameworks set up by the operating system.
 
 ### Summary
 

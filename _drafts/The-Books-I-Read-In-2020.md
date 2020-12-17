@@ -50,6 +50,9 @@ This is a useful gardening book for someone in North Florida. It provides a mont
 **The Vegetable Gardener's Bible**, Edward C. Smith 2009  
 This book was hard to find for awhile so I decided to get a copy when I found one on sale. It was a nice complement to the books from Steve Solomon. While the author's experience is gardening in the northern regions of the country, I found a lot of the material applicable and useful to my context.
 
+**The Sword of Shannara**, Terry Brooks 1977  
+My wife recommended this to me and I enjoyed it a lot. An adventure through a fantastical world of elves, trolls and magic. While some reviewers compared it unfavorably to "The Lord of the Rings", I found it to be very entertaining and didn't care that there were a few similarities. 
+
 **The Bourne Identity**, Robert Ludlum 1980  
-I loved the Bourne movies staring Matt Damon and after many years or saying I would, I actually read the novel the first film is based on.
+I loved the Bourne movies staring Matt Damon and after many years or saying I would, I actually read the novel the first film is based on. The story was significantly different from the film, but I found it to be a great spy story. The human side of a spy who has lost his memory. How would any of us react? Hopefully we all don't have killers trying to hunt us down if we can't remember who we are. :-)
 
