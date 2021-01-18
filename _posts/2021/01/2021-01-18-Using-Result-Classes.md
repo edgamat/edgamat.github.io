@@ -305,7 +305,7 @@ Which allows you to do this:
 
 ```csharp
     var message = handler.InsertBook("1234", "title")
-        .Map(
+        .Match(
             () => "Success",
             errors => $"Errors: {string.Join(",", errors)}"
         );
