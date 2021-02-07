@@ -1,3 +1,7 @@
+JSON Encoding Dates (to include timezone info when serializing) 
+
+Using new HealthChecks in ASPNET
+
 Legacy EF Core - triggers
 
 Using default values with EF Core
