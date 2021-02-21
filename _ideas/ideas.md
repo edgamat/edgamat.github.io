@@ -1,3 +1,34 @@
+Flight Rules
+
+Flight Rules are the hard-earned body of knowledge recorded in manuals that list, step by step, what to do it X occurs and why. Essentially, they are extremely detailed, scenario-specific standard operating procedures.
+
+Flight Rules protest against the temptation to take risks, which is strongest when momentum has been building to meet a deadline.
+
+Standard Operating Procedures
+
+101) When making a change to the code
+102) When fixing a bug
+103) When creating a Pull Request
+104) When adding a feature not ready for production
+105) When adding an endpoint
+106) When adding a message consumer
+107) When adding a message producer
+108) When adding a log entry
+109) When handling an exception
+110) When adding an application setting
+111) When modifying an application setting
+112) When adding a health check
+113) When adding a new table/view to an EF Core context (not owned by the project)
+114) When adding a call to a stored procedure (not owned by the project)
+
+201) When a build fails in DEV
+202) When a deployment fails in DEV
+203) When a deployment fails in TEST
+204) When a nightly integration test fails
+205) When a nightly security scan fails
+206) When a deployment fails in PROD
+
+
 JSON Encoding Dates (to include timezone info when serializing) 
 
 Using new HealthChecks in ASPNET
