@@ -11,7 +11,7 @@ I read a tweet this week that made me think. It was from [Seth Juarez](https://t
 
 <!--more-->
 
-![Most of our problems in tech stem from our desire to be clever as opposed to simply being clear. Cleverness over clarity is our Achilles heel](/assets/img/seth-tweet.png)
+![Most of our problems in tech stem from our desire to be clever as opposed to simply being clear. Cleverness over clarity is our Achilles heel](/assets/img/Seth-Tweet.PNG)
 
 ### What's Wrong with Clever Code?
 
