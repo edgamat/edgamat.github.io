@@ -48,7 +48,7 @@ I watched a video recently that described two drawbacks about being in an echo c
 
 Source: [https://www.youtube.com/watch?v=yv-nivu_dOI](https://www.youtube.com/watch?v=yv-nivu_dOI)
 
-Being in an echo chamber can sometimes mean that you have lost your ignorance. What I mean by that is you do not realize you are ignorant of other ideas. [Phillip Armour wrote a great article][article] describing that he called the "The Five Orders of Ignorance". It is the second one that holds true more that any of the others:
+Being in an echo chamber can sometimes mean that you have not lost your ignorance. What I mean by that is you do not realize you are ignorant of other ideas. [Phillip Armour wrote a great article][article] describing that he called the "The Five Orders of Ignorance". It is the second one that holds true more that any of the others:
 
 > **2nd Order Ignorance - Lack of Awareness** i.e. I don’t know that I don’t know something.
 
@@ -66,7 +66,7 @@ Second, I find people who challenge me. [I find people who push me][push] into f
 
 And Third, I try to be kind to others. Being kind helps me be a better listener. I try to understand the context that others are coming from and realize that their experiences are not going to be exactly like mine. I'll admit that this is something I have struggled with a lot in my career, as I'm sure a lot of my co-workers would agree. But I have come a long way and don't want to revert back to the way I behaved. I realize now that being kind to my co-workers is the most important thing I can do.
 
-It isn't easy. Simply recognizing that you are in an echo chamber can be tough to do on your own. It often requires an outsider to prompt you into exploring further into areas you amy be uncomfortable doing. But I owe it to my co-workers and clients to be always striving to learn new ideas and find better ways of developing software.
+It isn't easy. Simply recognizing that you are in an echo chamber can be tough to do on your own. It often requires an outsider to prompt you into exploring further into areas you amy be uncomfortable doing. But I owe it to my co-workers and clients to always be striving to learn new ideas and find better ways of developing software.
 
 ### Summary
 
