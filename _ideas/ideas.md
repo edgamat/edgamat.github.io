@@ -1,3 +1,27 @@
+Using ROBOCOPY to transfer files
+
+1Password after one year
+
+Reusing objects in unit tests
+
+
+
+Hammer and Nails
+- For every job there is the perfect tool
+- Finding reasons to use your favorite tool
+
+
+
+
+Skills
+
+Pattern Recognition
+Situational Awareness
+Big Picture
+Kindness
+Communication
+Do the Work
+
 
 Flight Rules
 
