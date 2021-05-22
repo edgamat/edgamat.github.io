@@ -3,7 +3,6 @@ layout: post
 title: 'The Mythical Man-Month - A Review'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
-published: false
 ---
  
 Written in 1975, it was 20 years old when I bought my copy of _The Mythical Man-Month_ 25 years ago. What can a book more than 45 years old tell me today? Quite a lot actually.
