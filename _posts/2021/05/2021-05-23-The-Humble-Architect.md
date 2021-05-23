@@ -26,8 +26,8 @@ Brooks proposes that when an architect "challenges the builder's way of doing th
 
 I offer this is a good initial description of **The Humble Architect**. Such an architect is good at designing software solutions, to be sure. But more than that, the Humble Architect is capable of communicating their vision and working with the builders to achieve that vision. They treat the builders with respect and are humble in their approach to giving feedback and suggestions. And just as important, they are open to recognizing the contributions others have to the overall design and the success of the project.
 
-I have met a few Humble Architects in my career. I always admired their style and approach to interacting with their co-workers.
+I have met a few Humble Architects in my career. I always admired their style and approach to interacting with their co-workers. It is something I strive to embody when I interact with my co-workers. I find it difficult sometimes to make suggestions without having to dictate solutions. Sometimes I get a vision in my head of what a solutions should be and I get passionate about seeing it implemented. When a co-worker does not implement it the way I envisioned it, I can get upset. But as Brooks pointed out, you must be prepared to accept any solution as long as it meets the objectives. I'm still working on that one. 
 
+But I feel I do a good job of working with my co-workers to negotiate and agree to a solution. I always make such associations in private as I find it the best way to discover what the other person is thinking. More often than not I learn from those exchanges and the final solution is better for it. And I don't think I could sleep at night if I took any credit for ideas that I learned from someone else. We succeed as a team, but each of us deserves credit for their contributions.
 
-
-
+While I am not the ideal specimen, I attempt every day to become a Humble Architect. Shouldn't we all? 
