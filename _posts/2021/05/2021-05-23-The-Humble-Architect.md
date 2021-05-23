@@ -9,9 +9,9 @@ Recently I re-read _The Mythical Man-Month_ and one section resonated with me. I
 
 <!--more-->
 
-As anyone can tell you, having someone tell you how to do your job can feel like an attack. It can make you feel defensive. This holds true in a lot of situations including the software development world.
+As we all know from experience, having someone tell you how to do your job can feel like an attack. It can make you feel defensive. This holds true in a lot of situations including the software development world.
 
-Any time someone suggests that your way of developing or designing a piece of software isn't as good as their way, you naturally want to defend your work. I often feel this was when the architect of the system I am working on critiques my work and wants me to change the approach I've taken. Knowing how that feels hopefully makes me empathize with other developers when I offer the same advice on their work.
+Any time someone suggests that your way of developing or designing a piece of software isn't as good as their way, you naturally want to defend your work. I often feel this way when the architect of the system I am working on critiques my work and wants me to change the approach I've taken. Knowing how that feels hopefully makes me empathize with other developers when I offer the same advice on their work.
 
 When recently reading _The Mythical Man-Month_ by Frederick Brooks, he described a scenario when an architect challenges the estimate given by a developer charged with implementing the architect's designs. If the developer comes up with a higher estimate, the architect owes it to the developer to offer a possible implementation. That way, the developer can understand what the architect had in mind and how they formulated their estimate.
 
