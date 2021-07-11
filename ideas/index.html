@@ -17,10 +17,18 @@
         // Prevent navigation.
         e.preventDefault();
 
+        console.log(e.dataTransfer.getData('text/uri-list'))
+
         // Process all of the items.
         for (const item of e.dataTransfer.items) {
 
             console.log(item)
+
+            if (item.kind === 'string') {
+                await item.getAsString(function (s){
+                    console.log(document.getElementById(s));
+                });
+            }
 
             // kind will be 'file' for file/directory entries.
             if (item.kind === 'file') {
