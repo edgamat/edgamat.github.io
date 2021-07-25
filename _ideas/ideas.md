@@ -1,8 +1,20 @@
 Using ROBOCOPY to transfer files
 
+Reusing objects in unit tests
+
+Using BCP to ETL data
+
+Using WSL 
+
+Using Posh Git
+
 1Password after one year
 
-Reusing objects in unit tests
+Dependency Injection with .NET
+
+Writing Background Workers in .NET
+
+Diagnosing Memory Leaks with JetBrains dotMemory
 
 
 
