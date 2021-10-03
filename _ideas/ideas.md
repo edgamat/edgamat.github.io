@@ -1,5 +1,12 @@
 Using ROBOCOPY to transfer files
 
+Using PowerShell to Read/Write Files
+
+Message Types in a Micro Services Architecture
+    - Commands
+    - Events
+    - Documents
+
 Reusing objects in unit tests
 
 Using BCP to ETL data
@@ -15,7 +22,6 @@ Dependency Injection with .NET
 Writing Background Workers in .NET
 
 Diagnosing Memory Leaks with JetBrains dotMemory
-
 
 
 Hammer and Nails
