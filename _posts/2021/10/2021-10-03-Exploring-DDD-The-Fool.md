@@ -5,13 +5,13 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-Test-Driven Development, is a fascinating topic. Robert C. Martin heralds it as a foundational discipline of software development. Others, aren't so convinced. Even though I have written my thoughts on this topic once or twice of the years, I was inspired by Martin's recently released "Clean Craftsmanship" to explore it further. This is the first exploration, focused on how you can fool yourself into thinking your way is better.
+Test-Driven Development, is a fascinating topic. Robert C. Martin heralds it as a foundational discipline of software development. Others, aren't so convinced. Even though I have written my thoughts on this topic once or twice over the years, I was inspired by Martin's recently released "Clean Craftsmanship" to explore it further. This is the first exploration, focused on how you can fool yourself into thinking your way is better.
 
 <!--more-->
 
-### What is Test-Driven Development?
+### What is Test-Driven Development? 
 
-Test-Driven Development, or TDD, is a discipline used to write software. At it's core, the goal is to use automated unit tests to guide your work. You write a unit test that you know will fail, add just enough code to make the test pass, and refactor your code to incorporate the new code properly. Using test cases to guide your work can be very challenging for newcomers. I still struggle with it after 20 plus years of use. 
+Test-Driven Development, or TDD, is a discipline used to write software. At its core, the goal is to use automated unit tests to guide your work. You write a unit test that you know will fail, add just enough code to make the test pass, and refactor your code to incorporate the new code properly. Using test cases to guide your work can be very challenging for newcomers. I still struggle with it after 20 plus years of use. 
 
 I'll let more experienced and qualified people try to teach and advocate TDD. My goal here is to look at the challenges I have faced when using TDD and explore ways of writing better software with TDD.
 
@@ -81,11 +81,11 @@ And my test passes.
 
 ### Sometimes, Things Don't Fail
 
-I added the previous code using the MD hash because I have used this sort of code before and 'knew' what the 'correct' solution needed to be.
+I added the previous code using the MD5 hash because I have used this sort of code before and 'knew' what the 'correct' solution needed to be.
 
 However, from a TDD perspective, that might not have been a wise thing. I've added code that makes it difficult to write a failing test.
 
-The real test of this `CalculateHash` function is ensuring that it returns the same hashed value for the same stream of bytes. It is pretty easy to do that, even with hard-coded values (e.g. return `stream.Length.ToString()`). But if I wanted to be strictly following TDD, I'd have to write a a series of failing tests to get me there. Perhaps, something like this would have been a good next test to write?
+The real test of this `CalculateHash` function is ensuring that it returns the same hashed value for the same stream of bytes. It is pretty easy to do that, even with hard-coded values (e.g. return `stream.Length.ToString()`). But if I wanted to be strictly following TDD, I'd have to write a series of failing tests to get me there. Perhaps, something like this would have been a good next test to write?
 
 ```csharp
 [Fact]
@@ -154,7 +154,7 @@ _(I'll admit here that this example is very simple... but imagine using TDD on a
 
 I feel like this is a trap I sometimes fall into when practicing TDD. I get to a point in the code where I can see a proper solution and skip to the end. This means my test cases didn't drive me there. And as a result, I probably will be faced with a situation where I can't easily write tests that fails. But the code 'feels' correct. I can write a bunch of tests that pass against my current code, but I can't write any that fail. Is that so bad?
 
-On the one hand I could justify my approach against following TDD in these cases. My ability to quickly see 'correct' solutions in the code is what sets me apart from other developers. Years of experience of making mistakes, learning from them, and improving my skills means I can sometimes design solutions quickly. Why should I use TDD to arrive at a solution when I already know the destination. This feels like the right thing to do and TDD is disrupting my 'flow'.
+On the one hand, I could justify my approach against following TDD in these cases. My ability to quickly see 'correct' solutions in the code is what sets me apart from other developers. Years of experience of making mistakes, learning from them, and improving my skills means I can sometimes design solutions quickly because I've seen the patterns before. Why should I use TDD to drive me towards a solution when I already know the destination? "My way" feels like the right thing to do and TDD is disrupting my 'flow'.
 
 But on the other hand, it's a trap you can set for yourself. My 'correct' solution may only be one of many possibilities. I didn't get a chance to explore them through tests. I might have arrived at a completely different (and possible better) solution. What if I had been programming collaboratively with another developer? They may not have been able to follow my 'leap' to the end solution. To them, my solution might be confusing.
 
@@ -166,7 +166,7 @@ This approach to problem solving is called 'motivated reasoning'. You know somet
 
 Your instincts for a 'correct' solution can cause you to skip ahead and not follow TDD. Some developers might prefer this approach. It can be satisfying to have an "A-ha!" moment and code an elegant solution quickly. And you can fill in a bunch of test that all pass, which easily demonstrates your solution to be 'correct'.
 
-But I would humbly suggest that you are fooling yourself into thinking that your way is better than practicing TDD. No matter how smart you may be, you will always be fooled into thinking your solutions are correct. And without following TDD, your tests will be written from that perspective. 
+But I would humbly suggest that you are fooling yourself into thinking that your way is better than practicing TDD. No matter how smart you may be, you can always be fooled into thinking your solutions are correct. And without following TDD, your tests will be written from that perspective. 
 
 We typically give optimistic estimates to effort and timelines. We often submit work to be tested that doesn't satisfy all the requirements. We often make changes that cause a bunch of other parts of the system to fail. And this is due, in the most part, to fooling ourselves. 
 
