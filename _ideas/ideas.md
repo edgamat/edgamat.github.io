@@ -1,6 +1,29 @@
-Using ROBOCOPY to transfer files
+The Books I Read in 2021
 
-Using PowerShell to Read/Write Files
+Decorator Pattern with the Microsoft Dependency Injection Container
+
+How to organize service registration with the Microsoft Dependency Injection Container
+
+Captive Dependencies
+
+https://levelup.gitconnected.com/top-misconceptions-about-dependency-injection-in-asp-net-core-c6a7afd14eb4
+https://blog.ploeh.dk/2014/06/02/captive-dependency/
+Captive dependencies is a kind of dependency injection anti-pattern that can lead to bugs in your code.
+All you have to do to get a captive dependency problem is to inject a class with a shorter lifetime into a class with a longer lifetime. For example, inject a scoped service into a singleton. In this case, a scoped class will not be created and disposed per each web request. A scoped class will have the same lifetime as a singleton, and actually will become a singleton.
+
+Dependency Injection Container Always Disposes Objects
+
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton(new Service());
+}
+```
+
+How to use Dependency Injection with a Console Application
+
+
+Will the Real CURL please stand up?
 
 Message Types in a Micro Services Architecture
     - Commands
@@ -12,6 +35,17 @@ Reusing objects in unit tests
 Using BCP to ETL data
 
 Using WSL 
+
+Why are Coding Standards Important?
+
+Configuring Angular Applications
+
+
+
+
+Using ROBOCOPY to transfer files
+
+Using PowerShell to Read/Write Files
 
 Using Posh Git
 

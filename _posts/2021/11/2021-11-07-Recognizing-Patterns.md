@@ -12,7 +12,7 @@ logs that led to correcting the issue. Recognizing patterns is pretty important 
 
 ### The Background
 
-On a Saturday morning, my manager texted me letting me know that a job we had kicked off the night before was running slower than expected. We estimated it would process over 1,000 messages per minute, and it was only managing 500 per _hour_. SOmething was up, and he asked me to take a look.
+On a Saturday morning, my manager texted me letting me know that a job we had kicked off the night before was running slower than expected. We estimated it would process over 1,000 messages per minute, and it was only managing 500 per _hour_. Something was up, and he asked me to take a look.
 
 He told me how he was calculating the metrics, which was on the producer side of the message processing. It just wasn't publishing messages fast enough. that was a new one for me. Normally when a slow down is reported, it is on the consumer side. 
 
@@ -45,4 +45,4 @@ The code change ended up fixing the issue and we saw the rates increase to 1,000
 
 ### Recognizing Patterns
 
-I think diagnosing problems with a lot of things boils down to recognizing patterns. It's something that comes naturally to me, but I have worked hard to improve that skill. It involves a lot of training, and a lot of experience. The more problems you diagnose, the more patterns you have in your toolbox to look for.  I would encourage any developer, regardless of their experience to look for ways to improve their pattern recognition skills. It has saved me many times from having to spend weekends fixing bugs :-) 
+I think diagnosing problems with a lot of things boils down to recognizing patterns. It's something that comes naturally to me, but I have worked hard to improve that skill. It involves a lot of training, and a lot of experience. The more problems you diagnose, the more patterns you have in your toolbox to look for. I would encourage any developer, regardless of their experience to look for ways to improve their pattern recognition skills. It has saved me many times from having to spend weekends fixing bugs :-) 
