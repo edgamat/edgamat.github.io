@@ -2,7 +2,7 @@ The Books I Read in 2021
 
 Decorator Pattern with the Microsoft Dependency Injection Container
 
-How to organize service registration with the Microsoft Dependency Injection Container
+DONE How to organize service registration with the Microsoft Dependency Injection Container
 
 Captive Dependencies
 
@@ -20,7 +20,11 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+Unit Testing Dependency Injection Container Registrations
+
 How to use Dependency Injection with a Console Application
+
+Using Autofac with an .NET 6 Application
 
 
 Will the Real CURL please stand up?
