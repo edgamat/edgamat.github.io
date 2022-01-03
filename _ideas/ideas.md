@@ -1,8 +1,15 @@
-The Books I Read in 2021
+DONE! The Books I Read in 2021
+
+DONE! How to organize service registration with the Microsoft Dependency Injection Container
+
+
+Add eslint and prettier to a NodeJS project (with TypeScript)
+https://dev.to/caelinsutch/setting-up-a-typescript-nodejs-application-with-prettier-and-eslint-53jc#:~:text=As%20in%20the%20name%2C%20Prettier%20makes%20you%20code,to%20set%20the%20project%20up%20as%20node%2Fnpm%20project.
+https://prettier.io/docs/en/install.html
+https://github.com/prettier/eslint-config-prettier
+https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
 
 Decorator Pattern with the Microsoft Dependency Injection Container
-
-DONE How to organize service registration with the Microsoft Dependency Injection Container
 
 Captive Dependencies
 
