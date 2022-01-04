@@ -50,6 +50,7 @@ $on-laptop: 800px !default;
 pre,
 code {
   font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: $base-font-size * 0.75;
 }
 
 h1,
