@@ -3,6 +3,7 @@ layout: post
 title: 'Unit Testing Dependency Injection Container Registrations in ASP.NET'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
+published: false
 ---
 
 Have you ever thought of unit testing the code used to register services in your ASP.NET application? It's not a bad idea. Let's see how.
