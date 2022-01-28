@@ -50,6 +50,10 @@ Data migration scripts that modify the structure of existing database objects sh
 
 When a data migration is added to an application, the developer should add a new Task to the associated story in JIRA called "Verify Data Migration" and assign the task to whomever is responsible to deploying the code into Production (usually Mike Michaud). This is the cue to Mike that there will be a data migration as part of the next deployment. 
 
+When a data migration applies to tables not owned by our applications, a copy of the migration script should be added to the source code repository (e.g. manual-scripts) in order for developers to apply the same change to the local copy they have of the database.
+
+When using EF Core migrations, developers should decorate the data migration partial class with the `[ExcludeFromCodeCoverage]` attribute to exclude these auto-generated classes from influencing the code coverage metrics for the application.
+
 ### Pull Request Rules
 
 1. The reviewer should verify that the target environment is ready to accept the new functionality prior to completing the Pull Request.
