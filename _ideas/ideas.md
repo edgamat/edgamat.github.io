@@ -1,3 +1,5 @@
+"Persistance with insight leads to the same outcome"
+
 DONE! The Books I Read in 2021
 
 DONE! How to organize service registration with the Microsoft Dependency Injection Container

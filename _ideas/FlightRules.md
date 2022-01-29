@@ -40,31 +40,44 @@ Flight Rules protest against the temptation to take risks, which is strongest wh
 
 ### Data Migration Rules
 
-Each data migration script should be idempotent. Running a data migration script multiple times should do no harm and, whenever possible, generating no errors in the logs. 
+1. Each data migration script should be idempotent. Running a data migration script multiple times should do no harm and, whenever possible, generating no errors in the logs. Note: The default scripts generated from EF Core Entity Framework are not something we are in control of. However, if we add custom scripts to add data or manipulate existing database objects, we must ensure they are idempotent.
 
-Each application should ensure that data migration scripts are only run by the primary instance of the application. In other words, an application must not attempt to run the migration script from multiple instances simultaneously. This can be accomplished by using Eureka to determine if the instance is the primary instance prior to running a migration script.
+2. Each application should ensure that data migration scripts are only run by the primary instance of the application. In other words, an application must not attempt to run the migration script from multiple instances simultaneously. This can be accomplished by using Eureka to determine if the instance is the primary instance prior to running a migration script.
 
-Data migration scripts that modify the structure of existing database objects should not be run in Production until it is verified that the migration has run successfully in the Prod Fix Environment.
+3. Data migration scripts that modify the structure of existing database objects should not be run in Production until it is verified that the migration has run successfully in the Prod Fix Environment. We want to make sure the migration script works properly with the database loaded with data from Production.
 
-Data migration scripts that modify the structure of existing database objects should not be run in Production until it is verified that the Production database has a known good backup available.
+4. Data migration scripts that modify the structure of existing database objects should not be run in Production until it is verified that the Production database has a known good backup available. We want to make sure that if something goes wrong, there is a means to restore the affected database.
 
-When a data migration is added to an application, the developer should add a new Task to the associated story in JIRA called "Verify Data Migration" and assign the task to whomever is responsible to deploying the code into Production (usually Mike Michaud). This is the cue to Mike that there will be a data migration as part of the next deployment. 
+5. When a data migration is added to an application, the developer should add a new Task to the associated story in JIRA called "Verify Data Migration" and assign the task to whomever is responsible to deploying the code into Production (usually Mike Michaud). This is the cue to Mike that there will be a data migration as part of the next deployment.
 
-When a data migration applies to tables not owned by our applications, a copy of the migration script should be added to the source code repository (e.g. manual-scripts) in order for developers to apply the same change to the local copy they have of the database.
+6. When a data migration applies to tables not owned by our applications, like the suite of AIM databases, a copy of the migration script should be added to the source code repository (e.g. manual-scripts) in order for developers to apply the same change to the local copy they have of the database.
 
-When using EF Core migrations, developers should decorate the data migration partial class with the `[ExcludeFromCodeCoverage]` attribute to exclude these auto-generated classes from influencing the code coverage metrics for the application.
+7. When using EF Core migrations, developers should decorate the data migration partial class with the `[ExcludeFromCodeCoverage]` attribute to exclude these auto-generated classes from influencing the code coverage metrics for the application.
 
 ### Pull Request Rules
 
-1. The reviewer should verify that the target environment is ready to accept the new functionality prior to completing the Pull Request.
+1. The author of the Pull Request should verify that the target environment is ready to accept the new functionality prior to completing the Pull Request. For example, if a database object needs to be added/modified in the CIS database, the author should verify the DEV/TEST instance of CIS has the updates applied.
 
 2. The reviewer should verify that the application version (`version.ps1`) is unique, following the Semantic Versioning rules.
 
 3. The reviewer should verify that any data migration scripts in the Pull Request are idempotent.
 
-4. The reviewer should checkout the code branch and verify that all unit tests pass.
+4. The reviewer should checkout the code branch and verify that 
+    - the code compiles,
+    - all unit tests pass,
+    - no un-necessary compiler warnings have been added,
+    - the code changes adhere to our agreed-upon coding standards
+
+5. The reviewer should verify that the private build of the Pull Request branch successful completed in TeamCity.
 
 ### Developer Testing Rules
+
+The purpose of the Developer Testing task on Sprint Stories is to:
+    - verify that the updated application is deployed correctly into the Development Environment
+    - review the application logs, message queues, etc. for abnormalities
+    - verify that any data migrations were applied successfully
+    - verify that the CI/CD Integration Tests in TeamCity all passed
+
 
 1. The developer should verify that the code deployed correctly into the Development Environment (Build/Test step was successful and the Deploy step was successful).
 
@@ -87,3 +100,6 @@ When using EF Core migrations, developers should decorate the data migration par
 10. Once all developer testing is complete, the developer should request the deployment of the application to the Test Environment. This does not apply to applications that are automatically deployed to the Test Environment. The developer should verify that the code deployed correctly into the Test Environment.
 
 11. The developer should post a message to the team once they have verified that the application is successfully deployed to the Test Environment and Business Testing can start. 
+
+
+
