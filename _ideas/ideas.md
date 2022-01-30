@@ -1,4 +1,4 @@
-"Persistance with insight leads to the same outcome"
+"Persistance without insight leads to the same outcome"
 
 DONE! The Books I Read in 2021
 
@@ -11,7 +11,7 @@ https://prettier.io/docs/en/install.html
 https://github.com/prettier/eslint-config-prettier
 https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
 
-Decorator Pattern with the Microsoft Dependency Injection Container
+DONE! Decorator Pattern with the Microsoft Dependency Injection Container
 
 Captive Dependencies
 
@@ -29,7 +29,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Unit Testing Dependency Injection Container Registrations
+DONE! Unit Testing Dependency Injection Container Registrations
 
 How to use Dependency Injection with a Console Application
 
