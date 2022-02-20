@@ -81,25 +81,27 @@ The purpose of the Developer Testing task on Sprint Stories is to:
 
 1. The developer should verify that the code deployed correctly into the Development Environment (Build/Test step was successful and the Deploy step was successful).
 
-2. If the application is automatically deployed to the Test Environment, the developer should verify that the code deployed correctly into the Test Environment.
+2. The developer should verify that all re-seed scripts were successfully applied to the Development Environment. This should also be done in the Test Environment if the application is automatically deployed to the Test Environment. 
 
-3. The developer should review the application logs, message queues, etc. for abnormalities after the new version of the application is deployed into the Development Environment. 
+3. If the application is automatically deployed to the Test Environment, the developer should verify that the code deployed correctly into the Test Environment.
 
-4. The developer should verify that all data migrations were successfully applied after the new version of the application is deployed into the Development Environment. This should also be done in the Test Environment if the application is automatically deployed to the Test Environment. 
+4. The developer should review the application logs, message queues, etc. for abnormalities after the new version of the application is deployed into the Development Environment. 
 
-5. The developer should verify that the CI/CD Integration Tests in TeamCity all passed after the new version of the application is deployed into the Development Environment. 
+5. The developer should verify that all data migrations were successfully applied after the new version of the application is deployed into the Development Environment. This should also be done in the Test Environment if the application is automatically deployed to the Test Environment. 
 
-6. The developer should post messages to the team when there is a failed deployment and when the deployment is corrected. The messages should indicate any impacts the failed deployment may have on users and if possible an estimate on how long it will take to get things corrected.
+6. The developer should verify that the CI/CD Integration Tests in TeamCity all passed after the new version of the application is deployed into the Development Environment. 
 
-7. The developer should verify each of the acceptance criteria is satisfied in the Development Environment, or the lowest environment where verifying the behavior is possible (for example, some tests might only be possible in the Test Environment).
+7. The developer should post messages to the team when there is a failed deployment and when the deployment is corrected. The messages should indicate any impacts the failed deployment may have on users and if possible an estimate on how long it will take to get things corrected.
 
-8. The developer should document the steps, including any JSON payloads, SQL scripts, etc., in the Developer Testing task on each story.
+8. The developer should verify each of the acceptance criteria is satisfied in the Development Environment, or the lowest environment where verifying the behavior is possible (for example, some tests might only be possible in the Test Environment).
 
-9. The developer should post a message to the team once they have verified that Automated QA testing can start.
+9. The developer should document the steps, including any JSON payloads, SQL scripts, etc., in the Developer Testing task on each story.
 
-10. Once all developer testing is complete, the developer should request the deployment of the application to the Test Environment. This does not apply to applications that are automatically deployed to the Test Environment. The developer should verify that the code deployed correctly into the Test Environment.
+10. The developer should post a message to the team once they have verified that Automated QA testing can start.
 
-11. The developer should post a message to the team once they have verified that the application is successfully deployed to the Test Environment and Business Testing can start. 
+11. Once all developer testing is complete, the developer should request the deployment of the application to the Test Environment. This does not apply to applications that are automatically deployed to the Test Environment. The developer should verify that the code deployed correctly into the Test Environment.
+
+12. The developer should post a message to the team once they have verified that the application is successfully deployed to the Test Environment and Business Testing can start. 
 
 
 
