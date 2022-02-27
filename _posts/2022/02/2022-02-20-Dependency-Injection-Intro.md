@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Dependency Injection - Introduction'
+title: 'Dependency Injection Part 1 - Introduction'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
