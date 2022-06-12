@@ -2,7 +2,7 @@
 
 The Application Development Team (App Dev Team) maintains a suite of services supporting the integration of several applications including AIM, CARL, CAP, ImageRight, ConceptOne and Titan Imaging. Our goal is ensure each of these systsm has access to the data it requires to support its business objectives.
 
-### Our Services
+### Our Services 
 
 Our initial purpose was to enable data to flow in and out of AIM for external systems. We built the "AIM API" that consists of a set of REST-based APIs that allow external systems to send data to AIM via HTTP requests. We also support the AIM Change Watcher which tracks changes in the AIM database and broadcasts messages of changes made to entities. These services allow external systems to keep in-sync with changes being made in AIM and to provide updated/new information to AIM, such as policy data and invoice data.
 
