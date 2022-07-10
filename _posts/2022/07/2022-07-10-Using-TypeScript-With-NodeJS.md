@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Using typeScript With NodeJS'
+title: 'Using TypeScript With NodeJS'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
