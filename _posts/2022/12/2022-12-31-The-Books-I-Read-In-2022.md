@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 2022 was a special year. My wife and I moved! After 22 years living in a mobile home park we had a new house built on 6 acres of land we owned. It isn't a large house but it is all ours. 
 
-As this year comes to a close, I want to list all the books I read. I read a few more (I think?) than last year. Some of them I didn't finish (for reasons I'll explain below).
+As this year comes to a close, I want to list all the books I read. I read fewer books (I think?) than last year. Some of them I didn't finish (for reasons I'll explain below).
 
 Here is the list of them and a brief mention of the effect they had on me.
 
@@ -32,7 +32,15 @@ I read Farley's book _Continuous Delivery_ when it was first released and re-rea
 I wanted to enjoy this book more than I did. The book tackles various topics of software development and highlights how the decisions we make can influence the successful development of software products. All decisions have tradeoffs and the authors walk you through a lot of ideas to think about. But the book felt a bit bland. And maybe that's not a bad thing? I don't know. But I'm not sure there is much I can apply to my day-to-day work. That being said I am only half-way through so I need to perhaps revise my review once I am finished.
 
 **Debug It!**, Paul Butcher 2009  
-As part of packing for our move this year I came across sveral books I purchased but never read. _Debug It!_ was one of these and I decided to give it a read (or toss it!). I was impressed. And yes, I should have read it a long time ago. Debugging software is not a simple activity. You can spend a lifetime debugging software and never learn good debugging techniques. This book was a wealth of good advice. It describes debugging from a logical, experimental approach. It teaches good habits and more than a few ways to prevent you from having to debug your code in the first place. I'd recommend this to any developer, but especially those who have not yet done a lot of debugging.
+As part of packing for our move this year I came across several books I purchased but never read. _Debug It!_ was one of these and I decided to give it a read (or toss it!). I was impressed. And yes, I should have read it a long time ago. Debugging software is not a simple activity. You can spend a lifetime debugging software and never learn good debugging techniques. This book was a wealth of good advice. It describes debugging from a logical, experimental approach. It teaches good habits and more than a few ways to prevent you from having to debug your code in the first place. I'd recommend this to any developer, but especially those who have not yet done a lot of debugging.
+
+**Programming TypeScript**, Boris Cherny 2019  
+**Effective TypeScript**, Dan Vanderkam 2019  
+I discovered this year that my knowledge and understanding of TypeScript had been pretty bad. I studied and learned TypeScript years ago and the language has advanced and evolved significantly since then. So it was time for a reset. I bought a _Effective TypeScript_ and dove in. I realized right away that there were some core concepts I needed to understand first. So I switched to another book _Programming TypeScript_ which was more what I needed. It was a great re-introduction to TypeScript. It was the book I wished I could have read back in 2015 when I first learned TypeScript. Once I completed it, I returned to _Effective TypeScript_ and found it much more engaging. With the basics under my belt, the context of the ideas and advice made much more sense. 
+
+**The Passage**, Justin Cronin 2010  
+THis book was a gift and I liked it right from the start. The first 1/3 of the book was fast-paced and very well written. It described  a world for the characters and really put you in the heart of the action. The book then time-jumps to the future with a completely new set of characters... which is where I am now. I have not finished the book, but based on the first 1/3 I can't wait to see where it takes me.
+
 
 
 
