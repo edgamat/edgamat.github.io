@@ -50,9 +50,9 @@ It is incredibly disheartening when you see this. How can I tell which of these 
 
 The experiences have motivated me to treat all warnings as errors. I've seen many developers use Visual Studio and due to the way it is configured, they never even see the warnings! By treating them all as errors it forces developers to deal with them.
 
-But why, you might ask, should I bother? If the compiler only thinks of them as warnings, are they not that important? And this is where the trouble begins. As the example above demostrates, most warnings are highlighting a potential _runtime_ problem. It is importnat to investigate them all to be sure your code is of the upmost quality when it is running.
+But why, you might ask, should I bother? If the compiler only thinks of them as warnings, are they not that important? And this is where the trouble begins. As the example above demonstrates, most warnings are highlighting a potential _runtime_ problem. It is important to investigate them all to be sure your code is of the upmost quality when it is running.
 
-Treating warnings as errors means different things to differnt people. One person on your team might see an warning as something that needs to be fixed and another person might not. When reviewing a pull request, it is next to impossible to spot potential compiler warnings. If you force all warnings to be treated as errors, you know that if the code compiles there are no warnings that have been ignored. 
+Treating warnings as errors means different things to different people. One person on your team might see an warning as something that needs to be fixed and another person might not. When reviewing a pull request, it is next to impossible to spot potential compiler warnings. If you force all warnings to be treated as errors, you know that if the code compiles there are no warnings that have been ignored. 
 
 To enable this in .NET, add the `TreatWarningsAsErrors` element to your .csproj file:
 
@@ -68,7 +68,7 @@ Obviously there will be times, either due to practical concerns or security issu
 <WarningsNotAsErrors>warningnumber1,warningnumber2</WarningsNotAsErrors>
 ```
 
-You can place whatever warning codes you want in the list and they will no longer be treaed as errors.
+You can place whatever warning codes you want in the list and they will no longer be treated as errors.
 
 Another way to accomplish the same goal for all projects in a solution is to use a `Directory.Build.props` file:
 
@@ -86,7 +86,7 @@ Sometimes you may not want to warn users of the issues at all:
 <NoWarn>warningnumber1,warningnumber2</NoWarn>
 ```
 
-This can be very useful when certain warnings are something that cannot be 'fixed' (ie. false positives). Being constantly warned about them can be distracting. While this is potentailly dangerous if you start ignoring issues that could cause you problems, it is a useful option to have. For example, in one project, we were using a third-party DLL that wasn't compatible with the current version of .NET we were using. But we had fully tested the portion of the functionality we required and it worked perfectly. Being constantly warned of the potential incompatibility was not necessary and we used the NoWarn to remove the warnings from the compilation output.
+This can be very useful when certain warnings are something that cannot be 'fixed' (ie. false positives). Being constantly warned about them can be distracting. While this is potentially dangerous if you start ignoring issues that could cause you problems, it is a useful option to have. For example, in one project, we were using a third-party DLL that wasn't compatible with the current version of .NET we were using. But we had fully tested the portion of the functionality we required and it worked perfectly. Being constantly warned of the potential incompatibility was not necessary and we used the NoWarn to remove the warnings from the compilation output.
 
 ## Summary
 

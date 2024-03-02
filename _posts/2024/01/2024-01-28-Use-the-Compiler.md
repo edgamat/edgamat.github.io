@@ -156,7 +156,7 @@ You might ask, what did we accomplish with this refactoring. We added a bunch of
 
 Was it worth it? I suppose it depends who you ask. 
 
-While the invariant was removed from the `OrderHandler` class, we now have bascially the same invariant check in the `LoadOrders` method of the `CustomerOrders` class. Moving the validation logic to another class is a good separation of concerns. The complexity of the `OrderHandler` class has been reduced. 
+While the invariant was removed from the `OrderHandler` class, we now have basically the same invariant check in the `LoadOrders` method of the `CustomerOrders` class. Moving the validation logic to another class is a good separation of concerns. The complexity of the `OrderHandler` class has been reduced. 
 
 This change also prevents a 'leaky abstraction' of sorts. The original input parameter was an array of `Order` objects. This is how the data is extracted from the database. You are allowing that form of the data to influence the design of the `OrderHandler` class. Introducing the `CustomerOrders` class is a way of modelling the data more from a domain-level, than from a persistance-level.
 
