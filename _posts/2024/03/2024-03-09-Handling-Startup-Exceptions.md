@@ -67,11 +67,11 @@ catch (Exception ex)
 Instead of getting the 500.30 error, I get a 404 NOT FOUND response. I created a middleware class to handle all requests:
 
 ```csharp
-public class StartupExceptionMiddleware
+public class StartupExceptionHandlerMiddleware
 {
     private readonly RequestDelegate _next;
 
-    public StartupExceptionMiddleware(RequestDelegate next)
+    public StartupExceptionHandlerMiddleware(RequestDelegate next)
     {
         _next = next;
     }
@@ -81,14 +81,20 @@ public class StartupExceptionMiddleware
         var path = httpContext.Request.Path;
         if (path != null)
         {
-            httpContext.Response.StatusCode = (int)HttpStatusCode.ServiceUnavailable;
-            httpContext.Response.ContentType = "text/html";
-            using var file = File.OpenRead("StartupException.html");
-            await file.CopyToAsync(httpContext.Response.Body);
+            // Check if the path is not '/health'
+            if (!path.Equals("/health", StringComparison.OrdinalIgnoreCase))
+            {
+                // Custom processing for all other paths
+                httpContext.Response.StatusCode = (int)HttpStatusCode.ServiceUnavailable;
+                httpContext.Response.ContentType = "text/html";
+                using var file = File.OpenRead("StartupException.html");
+                await file.CopyToAsync(httpContext.Response.Body);
 
-            return; // Important to prevent calling next middleware for these paths
+                return; // Important to prevent calling next middleware for these paths
+            }
         }
 
+        // Proceed with the next middleware (important for the '/health' endpoint to work)
         await _next(httpContext);
     }
 }
@@ -101,13 +107,59 @@ Then I use the middleware in the startup exception web application:
 ```csharp
     var startupExceptionApp = new WebApplication.CreateBuilder(args);
 
-    startupExceptionApp.UseMiddleware<StartupExceptionMiddleware>();
+    startupExceptionApp.UseMiddleware<StartupExceptionHandlerMiddleware>();
     
     startupExceptionApp.Run();
 ```
 
 This gave me the experience I was hoping for. If the 'real' web application fails to run, a bare-minimum web application takes its place and  presents users with a reasonable experience while we address the error and get it fixed. 
 
+### Health Checks
+
+I also wanted to expose a health check endpoint when an error occurred. To do that I created a handler that encapsulated all the steps to handle a startup exception:
+
+```csharp
+public static class StartupExceptionHandler
+{
+    public static void Handle(Exception ex, string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddHealthChecks()
+            .AddCheck("StartupFailure", () => HealthCheckResult.Unhealthy(ex.Message, ex));
+
+        var app = builder.Build();
+
+        app.MapHealthChecks("/health", new HealthCheckOptions()
+        {
+            ResponseWriter = JsonResponseWriter.WriteResponse
+        });
+
+        app.UseMiddleware<StartupExceptionHandlerMiddleware>();
+
+        app.Run();
+    }
+}
+```
+
+Then it replaced the logic in the `catch` block:
+
+```csharp
+try
+{
+    var builder = WebApplication.CreateBuilder(args);
+    ...
+    var app = builder.Build();
+    ...
+    app.Run();
+} 
+catch (Exception ex)
+{
+    Logger.LogError(ex, "Unhandled Startup Exception");
+    StartupExceptionHandler.Handle(ex, args);
+}
+```
+
 ### Limitation
 
-I'd like to qualify this solution with a n obvious limitation. It is possible that the runtime exception that the 'real' application encountered may also occur with the bare-minimum version I added. In such cases, this additional work was all for not. In my experience this is rare, but not unheard of. So don't be surprised if this doesn't work 100% of the time. 
+I'd like to qualify this solution with an obvious limitation. It is possible that the runtime exception that the 'real' application encountered may also occur with the bare-minimum version I added. In such cases, this additional work was all for not. In my experience this is rare, but not unheard of. So don't be surprised if this doesn't work 100% of the time. 
