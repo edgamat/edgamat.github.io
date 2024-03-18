@@ -148,8 +148,7 @@ The `BackgroundServiceHealth` instances are registered as singletons:
 
 ```csharp
 // Program.cs
-
-builder.Services.AddSingleton(typeof(IBackgroundServiceHealth<>));
+builder.Services.AddSingleton(typeof(BackgroundServiceHealth<>));
 ```
 
 ### The Background Service Health Check
