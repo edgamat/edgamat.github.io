@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Distributed Tracing in .NET - Part 0'
+title: 'Distributed Tracing in .NET - Part 0 - The Sample Application'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
@@ -32,8 +32,7 @@ There is an ASP.NET Web API where the system sends requests to create new plans.
 
 The CREATE PLAN endpoint creates a new maintenance plan in a SQL Server database table, and then publishes a "MaintenancePlanCreated" message to RabbitMQ.
 
-The Accounting Service consumes the "MaintenancePlanCreated" messages, recording the plan in its database setting up an invoice to be paid. It calls
-a third-party HTTP API that sends an email message to the customer.
+The Accounting Service consumes the "MaintenancePlanCreated" messages, recording the plan in its database setting up an invoice to be paid. It calls a third-party HTTP API that sends an email message to the customer.
 
 The .NET solution includes:
 
@@ -60,7 +59,7 @@ I want to trace the request through the system, being able to see:
 
 I am going to use the `System.Diagnostics.ActivitySource` to create tracing data.
 
-I am going to use Open Telemetry to export the telemetry data. 
+I am going to use Open Telemetry to export the telemetry data. I'd also like to compare this approach to using the Serilog suite of libraries to export the telemetry data.
 
 Initially I am going to use Seq to record all the tracing data. Using Seq, I should be able to filter the logs and view traces of the steps along the way.
 
