@@ -199,4 +199,4 @@ You can see that all the activity is linked together:
 
 OpenTelemetry allows us to export logs and traces to a log analysis tool, without having to use any vendor-specific protocols. The .NET ecosystem provides a rich set of instrumentation automatically enabling enhanced logging and distributed tracing.
 
-In the next part in this series, Let's add some custom data to the logs and traces to gain more insight on how the applications are working.
+In the next part in this series, Let's see what happens when exceptions and errors occur.
