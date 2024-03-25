@@ -178,7 +178,7 @@ When we create a maintenance plan, we see the logs, and we also see some additio
 
 These additional entries are the trace spans. If we expand one of them we see the following:
 
-![Seq Trace Attributes](/assets/img/otel-04.png)
+![Seq Trace Dimensions](/assets/img/otel-04.png)
 
 We can see the additional attributes added by the instrumentation, as well as a new trace id (`"Trace (d8b...)`). This trace id links all of these span and log entries together. If you filter by the trace id in Seq, you can look at all of the entries for a single trace:
 
