@@ -3,7 +3,6 @@ layout: post
 title: 'Developing Software Using the Scientific Method'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
-published: false
 ---
  
 I've wanted to write about this topic for awhile now. I wanted to describe how I use the scientific method to develop software. Turns out it was more complex than I thought.
