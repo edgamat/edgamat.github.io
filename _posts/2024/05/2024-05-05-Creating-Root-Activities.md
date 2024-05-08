@@ -47,9 +47,9 @@ Activity stopped: ProcessItem 79b3b07085973d9b2e7933ab12b5c07b 79b3b07085973d9b2
 Activity stopped: ProcessBatch (null) 79b3b07085973d9b2e7933ab12b5c07b cbce20d22ee75b08
 ```
 
-As you can see, each "ProcessItem" activity shares the same `TraceId` as the parent "ProcessBatch" activity. 
+As you can see, each "ProcessItem" activity shares the same `TraceId` as the parent "ProcessBatch" activity (i.e. `79b3b07085973d9b2e7933ab12b5c07b`). 
 
-It's helpful, but what I really was hoping for was a separate trace for each item being processed. I wanted to know how much time it took to process the entire batch. But for each item being processed, there are several child spans that I would like to link together in order to view all logs for a given item. For that I needed to use root activities.
+It's helpful, but what I really was hoping for was a separate trace for each item being processed. I want to know how much time it takes to process the entire batch. But for each item being processed, there are several child spans that I would like to link together in order to view all logs for a given item. For that I needed to use root activities.
 
 ### Root Activities
 
@@ -103,7 +103,7 @@ internal static class ActivitySourceExtensions
 We can swap out the "StartActivity" call with our new method:
 
 ```csharp
-        using var itemActivity = ActivitySource.StartActivity("ProcessItem");
+using var itemActivity = ActivitySource.StartRootActivity("ProcessItem");
 ```
 
 And here are the results:
