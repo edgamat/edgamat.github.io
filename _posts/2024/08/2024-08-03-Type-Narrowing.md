@@ -5,13 +5,13 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-Choosing the incorrect type for data in your applications can be a significnt source of bugs. Let's look how type narrowing can help you. 
+Choosing the incorrect type for data in your applications can be a significant source of bugs. Let's look how type narrowing can help you. 
 
 <!--more-->
 
 ### Types of Data in Programming Languages
 
-Most programming languages provide primative data types to store data. String, numbers, and dates are almost guaranteed to be part of the language:
+Most programming languages provide primitive data types to store data. String, numbers, and dates are almost guaranteed to be part of the language:
 
 ```csharp
 string description = "This is a test";
@@ -33,7 +33,7 @@ A `DateTime` represents all possible instances in time (down to the nanosecond) 
 
 For most uses, this represents a near infinite number of possible values in each set.
 
-But our programs typically don't accept all possible values as valid inputs. Programs include validation logic to ensure the values being assigned to properies or passed as parameters to functions are within the smaller subset of valid values:
+But our programs typically don't accept all possible values as valid inputs. Programs include validation logic to ensure the values being assigned to properties or passed as parameters to functions are within the smaller subset of valid values:
 
 ```csharp
 if (description != "")
