@@ -56,13 +56,13 @@ are still necessary to produce value.
 There are many forms of partially done work. For example, you create a branch of the codebase and begin working
 on a feature. Until that code branch is merged into the master code base and deployed into production, it is
 'partially done'. Let that sink in for a minute. Based on that definition, a significant portion of work can
-potentially 'partially done'. I'll content that it is not possible to eliminate all of these activities. You
+potentially be 'partially done'. I'll contend that it is not possible to eliminate all of these activities. You
 must have some amount of code 'in flight' in order to work the code changes in isolation, integrate them into
 the master code base, have them tested and eventually deployed into production.
 
 Keeping the amount of partially done work to a minimum is the key. [Agile software development][agile] methods help
-in this regard. Having teams tackling small amounts of work (Sprints/Iterations) with the changes being
-deployed to the production environment as soon as they are ready helps. Continuous Integration [ci] is a
+in this regard. For example, having teams tackling small amounts of work (Sprints/Iterations) with the changes being
+deployed to the production environment as soon as they are ready. Also, Continuous Integration [ci] is a
 powerful technique for managing development. It reduces the time between making a change and having that change
 in production (adding value to the customer).
 
@@ -91,13 +91,13 @@ It is wasteful to relearn this knowledge. This can manifest in several ways:
 - You don't express the ideas clearly in the code.
 - You don't share the knowledge with others.
 
-One more than one occasion, I have been the direct benefactor (future self) of activities
+On more than one occasion, I have been the direct benefactor (future self) of activities
 I did (past self) to capture knowledge as I progress through the development effort. But sharing
 that knowledge with others (collaboration, communication, clarity) is just as important.
 
 ### Task Switching
 
-Switching between different tasks as never felt natural. It is a skill that I have had develop and
+Switching between different tasks has never felt natural. It is a skill that I have had develop and
 I constantly work at improving. Having to work on multiple projects at the same time is sometimes
 a reality that cannot be avoided. However, keeping it to a minimum is going to help reduce the
 waste that occurs when switching between tasks.
@@ -117,7 +117,7 @@ are possible:
 - Delays in getting features tested/deployed
 
 Each of these might not be significant by themselves. However when combined, they can provide
-a major hinderance to having the customer realize value from you work as soon as possible.
+a major hinderance to having the customer realize value from your work.
 
 ### Handoffs
 
@@ -135,8 +135,8 @@ industry standard (as of late 2019) and I cannot recommend using any other VCS. 
 has literally transformed how the industry develops code.
 
 [DevOps][devops] is a powerful set of practices and tools to deliver code changes quickly and reliably.
-You can use DevOps to automatically build code (including running unit tests) whenever code is
-committed to the VCS. It can then automatically deploy the code to whatever environment you wish.
+You can employ DevOps practices to automatically build code (including running unit tests) whenever code is
+committed to the VCS. You can then automatically deploy the code to whatever environment you wish.
 The sky is the limit as far as what can be automated. This freedom allows you to reduce the time
 it takes to provide value to you customer.
 
@@ -144,22 +144,22 @@ it takes to provide value to you customer.
 
 The amount of waste a bug/defect represents is directly correlated to when it is discovered. If
 the defect is in the user story or requirement description, catching that early before the work
-commences is the bast case scenario. As you go through the development of the code, the cost
+commences is the best case scenario. As you go through the development of the code, the cost
 of correcting the issue becomes greater and greater, resulting in more and more waste.
 
 Therefore finding errors as soon as possible is critical in eliminating waste:
 
 - Unit testing can provide a great feedback mechanism for detecting issues as soon as they occur.
 - Integrating your changes frequently, in small increments can make detecting issues simpler.
-- Placing the new features in the hands of real users will let you know if there are problems. Do this as often
-  and as frequently as possible to reduce the waste from not providing them with value.
+- Placing the new features in the hands of real users will let you know if there are problems. Do this as 
+frequently as possible to reduce the time it takes to get feedback that something is wrong.
 
 ### Management Activities
 
-Do management activities add value? No more than testing or managing your product backlog. But they
+Do management activities add value? No more than testing or refining your product backlog. But they
 can be wasteful if not done correctly:
 
-- Track your work efficiently. That can be paper and pen, but the important thing is to not waste
+- Track your work efficiently. That can be with pen and paper, but the important thing is to not waste
   time trying to figure out what you're working on
 - Ensure everyone is on the same page. Meet and discuss with your team. Share and communicate.
 - When a task is blocked, know who to go to and get it unblocked.
