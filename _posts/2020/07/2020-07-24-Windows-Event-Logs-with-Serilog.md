@@ -183,7 +183,7 @@ namespace SerilogEventLogNotes
 }
 ```
 
-**NOTE**: The `Compute` function is available from the GiyHub source for the EventLog library:
+**NOTE**: The `Compute` function is available from the GitHub source for the EventLog library:
 
 https://github.com/serilog/serilog-sinks-eventlog/blob/dev/src/Serilog.Sinks.EventLog/Sinks/EventLog/EventIdHashProvider.cs
 

@@ -35,7 +35,7 @@ Reading this list, one can see that there may be different interpretations of wh
 you will need to perform your own assessment in your own context. What is wasteful to you might not be the same
 as another developer on your team, in your company or the industry as a whole.
 
-The following are some (hopeful) useful ways of looking at eliminating waste when developing software.
+The following are some (hopefully) useful ways of looking at eliminating waste when developing software.
 
 ## How to Recognize Waste
 

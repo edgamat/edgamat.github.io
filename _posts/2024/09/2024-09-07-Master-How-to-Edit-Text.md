@@ -11,15 +11,15 @@ In the early part of your software development career, you spend the majority of
 
 ## It's What We Do
 
-Farmers work the soil. Carpenters cut, sand, and paint wood. Name any endevor and you will find a core skill that defines it. For programmers, it is editing text. 
+Farmers work the soil. Carpenters cut, sand, and paint wood. Name any endeavor and you will find a core skill that defines it. For programmers, it is editing text.
 
 When coding, in my mind there is a vision of what the code should look like. I use text editors to realize that vision. The ideas flow from my mind, through my fingers and into the code using text editors. The keystrokes I press are an extension of my thoughts. 
 
-Frustration will build if I can't express my ideas. I have mastered how to edit text in order to bring ideas to life with as little effort as possible. To achieve this state, I must know how to edit text. 
+Frustration will build if I can't express my ideas. I have mastered how to edit text in order to bring ideas to life with as little effort as possible. To achieve this state, I must know how to edit text.
 
 ## Early Days
 
-My first job out of college was a long time ago. The Microsoft Windows operating system was just beginning to be popular in the work environment. When I started I was given a brand new PC. It was the first one on the floor with an SVGA graphics card (800x600 resolution). I was asked to configure an MS-DOS-based (not Windows) application to conduct field surveys and questionnaires. The application used the Clipper programming language with a dBASE database storing the data. We also wrote utlities in C to add headers to the questionnaire data files (PK-ZIP'ed directories of files). I still have a copy of that C code today:
+My first job out of college was a long time ago. The Microsoft Windows operating system was just beginning to be popular in the work environment. When I started I was given a brand new PC. It was the first one on the floor with an SVGA graphics card (800x600 resolution). I was asked to configure an MS-DOS-based (not Windows) application to conduct field surveys and questionnaires. The application used the Clipper programming language with a dBASE database storing the data. We also wrote utilities in C to add headers to the questionnaire data files (PK-ZIP'ed directories of files). I still have a copy of that C code today:
 
 ![One of my first programs](/assets/img/header.png)
 
@@ -33,11 +33,11 @@ I learned a lot during these early days of my career. All of the technologies I 
 
 ## So Many Choices
 
-Today, deciding which application to use as your primary text editor can be a journey of discovery. There are so many choices for you to explore. If you are primarily using Linux, the usual choices are `vim`, `nano` and `emacs`. But these are no means the only options. With Windows, you will also find an abundance of choices such as Notepad++, TextPad, and Sublime Text. (I've never used a Mac so I am not sure what choices you will find there). 
+Today, deciding which application to use as your primary text editor can be a journey of discovery. There are so many choices for you to explore. If you are primarily using Linux, the usual choices are `vim`, `nano` and `emacs`. But these are no means the only options. With Windows, you will also find an abundance of choices such as Notepad++, TextPad, and Sublime Text. (I've never used a Mac so I am not sure what choices you will find there).
 
 One of the more popular text editors is embodied in Visual Studio Code. This IDE can be used with just about any programming language, so it is worth taking a look at and learning how to use it. It is available on Linux and Windows (and on the Mac) and is free.
 
-Regardless of where your journey takes you, find an editor to master. Find one that you can use for as many situations as possible. You don't want to rely on multiple text editors if you can help it. For years I relied on 2 separate text editors. Each had features that made them the best tool for specific tasks. But I was fooling myself. It turns out that I could do 100% of my work from either of them. I was just lazy and didn't learn how to use each tool to its fullest. So I uninstalled one of them and haven't looked back. 
+Regardless of where your journey takes you, find an editor to master. Find one that you can use for as many situations as possible. You don't want to rely on multiple text editors if you can help it. For years I relied on 2 separate text editors. Each had features that made them the best tool for specific tasks. But I was fooling myself. It turns out that I could do 100% of my work from either of them. I was just lazy and didn't learn how to use each tool to its fullest. So I uninstalled one of them and haven't looked back.
 
 ## No Mouse Allowed
 
@@ -51,7 +51,7 @@ https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 
 Have a copy of this list available when you are editing text. I prefer to have a printed copy. Each time you reach for the mouse, stop and look through the list of shortcuts and see if there is one you can use instead of the mouse. For example, you can use the `SHIFT` and  arrow keys to select text:
 
-Chord | Result
+Shortcut | Result
 ------------------- | -------------------
 `SHIFT+Right Arrow` | Select text from the cursor moving to the right, one character at a time
 `SHIFT+Left Arrow` | Select text from the cursor moving to the left, one character at a time
@@ -62,13 +62,13 @@ Chord | Result
 
 Focus first on the basics:
 
-- Selecting text
-- Cut, Copy, paste
+- Selecting Text
+- Cut, Copy, Paste
 - Navigating through a file
 - Searching / Replacing text
-- Switching / closing tabs
+- Switching / Closing tabs
 
-While some of these shortcuts are specific to Visual Studio Code, a good portion of the basic commands are universally available in all Windows text editors. 
+While some of these shortcuts are specific to Visual Studio Code, a good portion of the basic commands are universally available in all Windows text editors.
 
 ## Practice, Practice, Practice
 
