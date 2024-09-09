@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Early Days - Mater How to Edit Text'
+title: 'Early Days - Master How to Edit Text'
 author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
