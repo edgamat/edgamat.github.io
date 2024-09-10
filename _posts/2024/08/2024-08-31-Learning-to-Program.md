@@ -13,13 +13,13 @@ What should you learn when you are starting out as a software developer?
 
 Recently I participated in interviewing several candidates for a position at my client's company. As a contractor, I was humbled that they asked me to participate so I wanted to do the best I could at evaluating the candidates. A few of these candidates were just starting their careers as software developers. I found them all had a solid background in computer science theory and their resumes indicated 2-5 years of practical experience. They were all good potential candidates to call back for a second interview focusing on their technical skills.
 
-The interviews were conducted and I asked my questions to each of them. Some answers were good and others not so good. The client took the feedback from the interview team and made their decisions on which candidates to extend offers to. 
+The interviews were conducted and I asked my questions to each of them. Some answers were good and others not so good. The client took the feedback from the interview team and made their decisions on which candidates to extend offers to.
 
 A few days after the interviews were over I was still thinking about them. It had been some time since I had interviewed people early in their career. I wondered if the questions I had for the candidates made sense? Was I expecting too much from them? What skills should they have learned in the first couple of years as software developers? I decided (with some encouragement from my wife) to write down some of my thoughts.
 
-## If I Were Starting My Career Today...
+## If I Were Starting My Career Today
 
-On YouTube you can find hundreds of videos giving advice to young programmers. They typically will have titles like "Learning to Code in 2024" or "Tips for Junior Developers". I have watched quite a few of them. Most of the videos have good advice and are probably worth watching if you are looking for advice early in your career. They talk about learning HTML, CSS and JavaScript. That's pretty universal these days. A lot would focus on how to gain knowledge and how to have the right attitude for learning quickly and efficiently. Many also focused on a particular technology, like React, or Node JS. 
+On YouTube you can find hundreds of videos giving advice to young programmers. They typically will have titles like "Learning to Code in 2024" or "Tips for Junior Developers". I have watched quite a few of them. Most of the videos have good advice and are probably worth watching if you are looking for advice early in your career. They talk about learning HTML, CSS and JavaScript. That's pretty universal these days. A lot would focus on how to gain knowledge and how to have the right attitude for learning quickly and efficiently. Many also focused on a particular technology, like React, or Node JS.
 
 My take away from watching all these videos was that there is a lot to learn. Early in your career it must seem pretty overwhelming. And the industry changes so fast that you can easily spend time learning something that may not be used a lot in a few years. It is important then to focus on some fundamental skills that will serve you far into your career. 
 
@@ -28,6 +28,7 @@ My take away from watching all these videos was that there is a lot to learn. Ea
 Okay, so what do I feel are important skills to learn early in your career? Ones that will be useful regardless of how the industry changes? I think, for now, I'll limit my scope to the skills that make you more efficient when creating computer programs (aka coding skills). I think these skills are the ones that you are most likely to need early in your career. If you can learn these skills well, it can make learning other aspects of software development easier.
 
 Today, my list would include the following skills:
+
 - Master how to edit text
 - Know how to use the command line
 - Learn a scripting language to automate tasks
