@@ -103,14 +103,7 @@ foreach (DatabasePermissionInfo perm in db.EnumDatabasePermissions())
 {
     if (perm.Grantee == userToScript.Name)
     {
-        if (perm.PermissionType.ToString() == "CONNECT")
-        {
-            Console.WriteLine($"GRANT CONNECT TO [{userToScript.Name}];");
-        }
-        else
-        {
-            Console.WriteLine($"GRANT {perm.PermissionType} ON {perm.ObjectName} TO [{userToScript.Name}];");
-        }
+        Console.WriteLine($"GRANT {perm.PermissionType} TO [{userToScript.Name}];");
     }
 }
 ```
