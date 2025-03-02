@@ -227,7 +227,7 @@ public static BadRequestObjectResult ToBadRequest(this DomainErrors errors, Http
 
 ### Summary
 
-Standardizing the 'problem' responses frm HTTP APIs is something that makes a lot of sense. The existing framework from ASP.NET Core and some helpful contributions from the community make this a pretty straightforward proposition.
+Standardizing the 'problem' responses from HTTP APIs is something that makes a lot of sense. The existing framework from ASP.NET Core and some helpful contributions from the community make this a pretty straightforward proposition.
 
 [rfc]: https://tools.ietf.org/html/rfc7807
 
