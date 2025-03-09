@@ -122,11 +122,15 @@ customizations:
 
 ```csharp
 // include errors object if it doesn't exist
-if (!context.ProblemDetails.Extensions.ContainsKey("errors"))
+if (!context.ProblemDetails.Extensions.ContainsKey("errors") && 
+    problemDetails is not HttpValidationProblemDetails)
 {
     context.ProblemDetails.Extensions["errors"] = new Dictionary<string, string[]>();
 }
 ```
+
+**NOTE**, we don't need to add the errors when the ProblemDetails is an instance of the
+`HttpValidationProblemDetails` class, since it has an explicit `Errors` property.
 
 ### Adding Details
 
