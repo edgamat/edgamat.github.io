@@ -28,10 +28,7 @@ dotnet add package Swashbuckle.AspNetCore
 
 ```csharp
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1");
-});
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -62,6 +59,16 @@ app.UseSwagger(options => options.RouteTemplate = "docs/openapi/{documentName}.j
 Now the document is found here:
 
 `https://{host}/docs/openapi/demo.json`
+
+To make it possible to view this document using Swagger UI, you must also make the following changes:
+
+```csharp
+app.UseSwaggerUI(options =>
+{
+    options.RoutePrefix = "docs";
+    options.SwaggerEndpoint("openapi/demo.json", "My API");
+});
+```
 
 ### Open API in .NET 9
 
