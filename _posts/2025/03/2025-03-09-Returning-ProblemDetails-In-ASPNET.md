@@ -5,7 +5,7 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-Continuing my research from last week [Using ProblemDetails in ASP.NET]({% post_url 2025/03/25-03-02-Using-ProblemDetails-In-ASPNET %}),
+Continuing my research from last week [Using ProblemDetails in ASP.NET]({% post_url 2025/03/2025-03-02-Using-ProblemDetails-In-ASPNET %}),
 I want to include ProblemDetails in other scenarios. For example, when a user receives a 401 or 403 response,
 there is no payload included in the response. I would prefer to include a ProblemDetails payload,
 making it simpler for callers to use the API.
