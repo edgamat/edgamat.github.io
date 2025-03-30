@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 
 I wrote about using ProblemDetails a while back:
 
-[Problem Details with ASP.NET Core]({% post_url /2021/04/21-04-18-Problem-Details-With-ASPNET-Core %})  
+[Problem Details with ASP.NET Core]({% post_url 2021/04/21-04-18-Problem-Details-With-ASPNET-Core %})  
 
 Since then, they have become a first-class citizen in the ASP.NET libraries and can be added as
 follows:

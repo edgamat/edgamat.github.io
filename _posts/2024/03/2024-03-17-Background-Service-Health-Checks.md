@@ -40,7 +40,7 @@ app.UseHealthChecks("/health", new HealthCheckOptions
 
 Check out this link for a description of the `JsonResponseWriter` class:
 
-[Using ASP.NET Core Health Checks]({% post_url /2021/02/2021-02-21-Using-ASPNET-Core-HealthChecks %})
+[Using ASP.NET Core Health Checks]({% post_url 2021/02/2021-02-21-Using-ASPNET-Core-HealthChecks %})
 
 ### Background Services
 

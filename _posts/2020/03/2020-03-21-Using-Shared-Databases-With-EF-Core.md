@@ -39,7 +39,7 @@ The following are some patterns and techniques we found to reduce side-effects i
 When using EF Core `SaveChanges` with stored procedures, you typically will need to ensure all the modifications made by EF Core and the stored procedure are done in a single database transaction. Use `TransactionScope` to implement an explicit transaction
 for all operations that represent the unit of work.
 
-When using `TransactionScope`, please be aware of its default isolation levels. Use the provided overloaded constructors to explicitly set the isolation that best suits your needs. Please read here for more information about [Isolation Levels with EF Core]({% post_url /2020/03/2020-03-14-Isolation-Levels-With-EF-Core %}).
+When using `TransactionScope`, please be aware of its default isolation levels. Use the provided overloaded constructors to explicitly set the isolation that best suits your needs. Please read here for more information about [Isolation Levels with EF Core]({% post_url 2020/03/2020-03-14-Isolation-Levels-With-EF-Core %}).
 
 ### Call Stored Procedures after `SaveChanges`
 

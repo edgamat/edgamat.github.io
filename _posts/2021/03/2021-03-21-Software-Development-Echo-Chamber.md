@@ -76,7 +76,7 @@ You just have be kind and listen.
 
 
 [article]: https://cacm.acm.org/magazines/2000/10/7556-the-five-orders-of-ignorance/fulltext
-[push]: {% post_url /2020/09/2020-09-13-Who-Pushes-You %}
+[push]: {% post_url 2020/09/2020-09-13-Who-Pushes-You %}
 
 
 

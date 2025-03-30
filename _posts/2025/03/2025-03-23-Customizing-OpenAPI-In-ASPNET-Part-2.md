@@ -5,7 +5,7 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-In Part 1 of [Customizing OpenAPI Documentation In ASP.NET]({% post_url /2025/03/2025-03-16-Customizing-OpenAPI-In-ASPNET-Part-1 %}),
+In Part 1 of [Customizing OpenAPI Documentation In ASP.NET]({% post_url 2025/03/2025-03-16-Customizing-OpenAPI-In-ASPNET-Part-1 %}),
 we looked at how to ensure responses for each the status code were provided and that the payloads.
 There are still more customizations we can make.
 

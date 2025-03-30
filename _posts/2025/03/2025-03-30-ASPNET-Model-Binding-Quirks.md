@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 Awhile ago I wrote about using the new JSON library and model binding:
-[Dealing with ASPNET Core 3 API Contract Changes]({% post_url /2020/03/2020-03-29-Dealing-With-ASPNET-Core-3-API-Contract-Changes.md %}).
+[Dealing with ASPNET Core 3 API Contract Changes]({% post_url 2020/03/2020-03-29-Dealing-With-ASPNET-Core-3-API-Contract-Changes %}).
 I only recently started to use it with ASP.NET 8. It has some quicks... let me explain.
 
 <!--more-->

@@ -265,7 +265,7 @@ WHERE  TraceId = 'fb445c3cd1cbc73e7a7fb892a3ba3d85'
 
 I wanted a way to correlate log entries together within an existing framework of using Serilog to capture logs in a SQL Server database table. While I demonstrated a way to accomplish this goal, it is only the tip of the iceberg when it comes to tracing activity in your application. If you want to grow beyond this and start answering more questions about your applications, I'd encourage you to look into distributed tracing using OpenTelemetry, which I wrote about last month:
 
-[Distributed Tracing in .NET - Part 0 - The Sample Application]({% post_url /2024/03/2024-03-20-Distributed-Tracing-Part-0 %})  
-[Distributed Tracing in .NET - Part 1 - Setup Open Telemetry]({% post_url /2024/03/2024-03-20-Distributed-Tracing-Part-1 %})  
-[Distributed Tracing in .NET - Part 2 - Exception Handling]({% post_url /2024/03/2024-03-22-Distributed-Tracing-Part-2 %})  
-[Distributed Tracing in .NET - Part 3 - Adding Custom Dimensions]({% post_url /2024/03/2024-03-31-Distributed-Tracing-Part-3 %})  
+[Distributed Tracing in .NET - Part 0 - The Sample Application]({% post_url 2024/03/2024-03-20-Distributed-Tracing-Part-0 %})  
+[Distributed Tracing in .NET - Part 1 - Setup Open Telemetry]({% post_url 2024/03/2024-03-20-Distributed-Tracing-Part-1 %})  
+[Distributed Tracing in .NET - Part 2 - Exception Handling]({% post_url 2024/03/2024-03-22-Distributed-Tracing-Part-2 %})  
+[Distributed Tracing in .NET - Part 3 - Adding Custom Dimensions]({% post_url 2024/03/2024-03-31-Distributed-Tracing-Part-3 %})  
