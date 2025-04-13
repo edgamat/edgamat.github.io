@@ -35,7 +35,7 @@ public class CreateWidgetRequest
     public required string Name { get; init; }
 
     [MaxLength(10)]
-    [JsonPropertyName("description")]
+    [JsonPropertyName("widgetDescription")]
     public required string Description { get; init; }
 
     [JsonPropertyName("available")]
