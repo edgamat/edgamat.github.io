@@ -5,7 +5,7 @@ author: 'Matthew Edgar'
 excerpt_separator: <!--more-->
 ---
 
-Organizing and creating the architecture a .NET application can be largely a matter of preference.
+Organizing and creating the architecture for a .NET application can be largely a matter of preference.
 How many projects should you use? What code belongs in each project? Let's take a look at
 infrastructure concerns.
 
@@ -22,12 +22,12 @@ such as the following:
 - Messaging (e.g. RabbitMQ)
 - Caching (e.g. Redis)
 - Threading (e.g. Task.WhenAll, Task.Delay)
-- System Clock (e.g. DateTime.UtcNow, TimeProvider)
+- System Clock (e.g. DateTime.UtcNow, DateTimeOffset.UtcNow)
 - File Systems (e.g. Directory, File)
 
 ### Prefer Abstractions
 
-Wherever practical, I try to ensure these components expose their functionality via abstractions. This
+Wherever practical, I try to ensure these components provide their functionality via abstractions. This
 allows for the core logic that uses these components to be unaware of how they are implemented. This
 reduces the coupling between the external components and the core (internal) components of an
 application. This makes the code more complex, but also makes it easier to test and change over time.
@@ -39,7 +39,7 @@ Let's take a look at a typical Web API solution. I would expect to find (at a mi
 - A Class Library project for all my core (domain) logic specific to the application
 - A Class Library project for all my infrastructure concerns
 
-A simple scenario might be for an API that interacts with a database. In this case, the Infrastructure
+A simple scenario is an API that interacts with a database. In this case, the Infrastructure
 project might have a dependency on Entity Framework Core or Dapper. You may create this solution:
 
 ```text
@@ -86,13 +86,16 @@ MyApp.sln
     => ThirdPartyApi
 ```
 
-Either approach is fine. You application will grow and you will find a way to organize the code
+Either approach is fine. Your application will grow and you will find a way to organize the code
 as it grows.
 
 ### Where do the Abstractions Live?
 
-In my opinion, all the external systems should only be accessed via abstractions, typically interfaces in .NET. The components in the infrastructure project are implementations of those abstractions. Let's say you have a domain entity called `Widget` and you require a means to persist it to a database and
-query the contents of this database. You could introduce an abstraction in the `Core` project:
+In my opinion, all the external systems should only be accessed via abstractions, typically
+interfaces in .NET. The components in the infrastructure project are implementations of those
+abstractions. Let's say you have a domain entity called `Widget` and you require a means to persist
+it to a database and query the contents of this database. You could introduce an abstraction in
+the `Core` project:
 
 ```csharp
 public interface IWidgetDataAccess
