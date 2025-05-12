@@ -104,7 +104,7 @@ public void Cached_Value_Changes_After_Cached_Duration_Elapses()
 }
 ```
 
-In order to test this class, I need to include a thread.Sleep (or Task.Delay) call in order to allow
+In order to test this class, I need to include a `Thread.Sleep` (or `Task.Delay`) call in order to allow
 the cache duration to expire. It doesn't matter how small the cacheDuration is. Granted, I could
 change the `updateAction` to provide a unique value each time. But let's just assume that is not
 something I am able or willing to change.
@@ -200,7 +200,7 @@ allows you to override the default implementation, making it possible to unit te
 
 It provides a `GetUtcNow()` method which is a wrapper around the `DateTimeOffset.UtcNow` value.
 
-We cna swap out our `ISystemClock` abstraction for the `TimeProvider` and our class works the same:
+We can swap out our `ISystemClock` abstraction for the `TimeProvider` and our class works the same:
 
 ```csharp
 public class DataCache
@@ -240,7 +240,7 @@ public class DataCache
 
 ### Writing Tests with the TimeProvider
 
-There are a couple ways to use the `TimeProvider` in your tests. First, you can create a fake instance
+There are a few ways to use the `TimeProvider` in your tests. First, you can create a fake instance
 with overloads on the methods required for your tests.
 
 For example, in my case I want to control the values provided each time the `GetUtcNow()` method is
