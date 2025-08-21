@@ -127,7 +127,7 @@ Within each project (or team or company) you have to make decisions based on you
 feel strongly about the `required` modifier, then you have to accept that missing properties will
 generate a JSON parsing error.
 
-Including the `required` modifier does have some nice behaviors you may not want to get loose. For
+Including the `required` modifier does have some nice behaviors you may not want to lose. For
 example, it can alert you that `struct` properties (like `DateOnly` and `int`) are missing.
 This wasn't possible in the past. You would need to declare the property as nullable and then use
 the `Required` attribute to ensure the value was provided in the incoming payload:

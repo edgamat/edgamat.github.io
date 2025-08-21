@@ -14,7 +14,7 @@ the messages don't use JSON Property Names if the model properties are decorated
 
 ### Background
 
-Support you have an ASP.NET API controller that allows callers to create widgets. The incoming JSON
+Suppose you have an ASP.NET API controller that allows callers to create widgets. The incoming JSON
 payload contains 3 values:
 
 ```json
