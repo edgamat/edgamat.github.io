@@ -12,12 +12,13 @@ I've wanted to learn more about Azure Service Bus for awhile. Let's give it a lo
 ### Basic Messaging
 
 I have use several messaging solutions with .NET: Kafka, Google Cloud Pub/Sub, and RabbitMQ. For
-RabbitMQ, I used the MassTransit library as an abstraction for my .NET. For Kafka and the Google Cloud
-messaging, I create custom messaging libraries, inspired by the design of MassTransit. I found that
-the large majority of the features in MassTransit were never used. We only ever use the basics:
+RabbitMQ, I used the MassTransit library as an abstraction for how to integrate messaging into my applications.
+For Kafka and the Google Cloud messaging, I create custom messaging libraries, inspired by the
+design of MassTransit. But I found that the large majority of the features in MassTransit were never used.
+We only ever use the basics:
 
-- Publish a command message and have competing consumers process the messages.
-- Publish an event and have multiple subscribers consume the messages.
+- Publish command messages and have competing consumers process the messages.
+- Publish events messages and have multiple subscribers consume the messages.
 - Use a dead-letter queue (DLQ) to handle failed messages.
 - All message are published in JSON.
 
@@ -30,10 +31,11 @@ something like this:
 - Register the class as the consumer of a message from a subscription,
 - If a runtime exception occurs in the consumer, the message is sent to the dead-letter queue
 - Create a publisher class that inherits from a base `IMessagePublisher` interface. This interface
-  exposes a generic `PublishAsync` method that accepts the name of the topic and the object being
+  exposes a generic `PublishAsync` method that accepts the name of the queue/topic and the object being
   published
 
-Each type of consumer is registered to a specific queue or subscription:
+Each type of consumer is registered to a specific queue or subscription. These mapping of consumers
+to a queue/subscription would be done via configuration (e.g. in the `appsettings.json` file).
 
 ```csharp
 services.AddAzureServiceBus()
@@ -42,14 +44,8 @@ services.AddAzureServiceBus()
     .Build();
 ```
 
-The `MyQueueMessageConsumer` inherits from `IMessageConsumer` interface:
-
-```csharp
-interface IConsumer<in TMessage> where TMessage: class
-{
-    Task ConsumeAsync(TMessage message, CancellationToken cancellationToken);
-}
-```
+The `AddBusConsumersHostedService` method registers a background service that creates processors
+for each of the configured queues and subscriptions.
 
 ### Azure Service Bus SDK
 
@@ -88,7 +84,7 @@ _services.AddAzureClients(builder =>
 });
 ```
 
-The `ServiceBusClient` and `ServiceBusSender objects are designed to be thread-safe and long-lived,
+The `ServiceBusClient` and `ServiceBusSender` objects are designed to be thread-safe and long-lived,
 so they can be created as a singleton and used throughout the lifetime of your application.
 I'll create a background hosted service to use the client to process the messages.
 
@@ -129,7 +125,7 @@ the following in the `appsettings.json`:
 We want a simple means to publish messages to a queue or a topic.
 
 ```csharp
-public class JsonPublisher : IPublisher
+public class JsonPublisher : IMessagePublisher
 {
     private readonly IAzureClientFactory<ServiceBusSender> _factory;
 
@@ -156,7 +152,7 @@ public class JsonPublisher : IPublisher
 }
 
 
-var publisher = scopedServices.GetRequiredService<IPublisher>();
+var publisher = scopedServices.GetRequiredService<IMessagePublisher>();
 
 var messageId = await publisher.PublishAsync("queue.1", new MyMessage(1, 1));
 ```
@@ -235,7 +231,7 @@ foreach (var queue in settings.Queues.Where(q => q.Enabled))
 
         var consumerType = Type.GetType(queue.ConsumerType);
 
-        var consumer = (IConsumer<MessageContext>)scope.ServiceProvider.GetRequiredService(consumerType);
+        var consumer = (IMessageConsumer<MessageContext>)scope.ServiceProvider.GetRequiredService(consumerType);
 
         await consumer.ConsumeAsync(messageContext, args.CancellationToken);
 
@@ -270,7 +266,7 @@ foreach (var subscription in settings.Subscriptions.Where(q => q.Enabled))
 
         var consumerType = Type.GetType(subscription.ConsumerType);
 
-        var consumer = (IConsumer<MessageContext>)scope.ServiceProvider.GetRequiredService(consumerType);
+        var consumer = (IMessageConsumer<MessageContext>)scope.ServiceProvider.GetRequiredService(consumerType);
 
         await consumer.ConsumeAsync(messageContext, args.CancellationToken);
 
@@ -282,6 +278,11 @@ foreach (var subscription in settings.Subscriptions.Where(q => q.Enabled))
     await processor.StartProcessingAsync(cancellationToken);
 }
 ```
+
+Note that each processor is configured with `AutoCompleteMessages` = `false`. Since we only complete
+the message when no exceptions occur during its consumption, the message will automatically be
+retried when exceptions occur. Once it reaches the maximum number of allowed retries, it will be
+sent to the configured dead letter queue.
 
 The `MessageContext` stores the details about the current queue and message:
 
@@ -302,11 +303,6 @@ public class MessageContext
 }
 ```
 
-Note that the processor is configured with `AutoCompleteMessages` = `false`. Since we only complete
-the message when no exceptions occur during its consumption, the message will automatically be
-retried when exceptions occur. Once it reaches the maximum number of allowed retries, it will be
-sent to the configured dead letter queue.
-
 In the `StopAsync` method, we dispose each of the queue processors:
 
 ```csharp
@@ -319,17 +315,25 @@ public async Task StopAsync(CancellationToken cancellationToken)
         await p.DisposeAsync();
     }
 }
-
 ```
 
 ### Consuming JSON Messages
+
+Here is the interface that all message consumers inherit from:
+
+```csharp
+interface IMessageConsumer<in TMessage> where TMessage: class
+{
+    Task ConsumeAsync(TMessage message, CancellationToken cancellationToken);
+}
+```
 
 Our consumer is expecting the 'raw' message to be a JSON document. To make things easier to consume,
 we want to convert the raw JSON into an object. For this be create an abstract JSON consumer we
 can inherit from:
 
 ```csharp
-public abstract class JsonConsumer<T> : IConsumer<MessageContext> where T : class
+public abstract class JsonConsumer<T> : IMessageConsumer<MessageContext> where T : class
 {
     public Task ConsumeAsync(MessageContext messageContext, CancellationToken token)
     {
@@ -347,7 +351,12 @@ public abstract class JsonConsumer<T> : IConsumer<MessageContext> where T : clas
 }
 ```
 
-Our consumer class now has all the details of Azure Service Bus removed:
+Our consumer class now has all the details of Azure Service Bus removed. This makes them much easier
+to reason about and test. Each of these consumer classes implements a `ConsumeMessageAsync` method
+to process the message. The message is passed in as an object, serialized from the JSON payload. These
+consumer classes are created using a `Scoped` lifetime via the built-in dependency injection container.
+This means we can inject any service required to process a message, just as we would with an ASP.NET
+Core controller or endpoint.
 
 ```csharp
 public record MyMessage(int Batch, int Message);
@@ -356,7 +365,7 @@ public class MyMessageConsumer : JsonConsumer<MyMessage>
 {
     private readonly ILogger<MyMessageConsumer> _logger;
 
-    public MyMessageConsumer(ILogger<MyMessageConsumer> logger) : base(logger)
+    public MyMessageConsumer(ILogger<MyMessageConsumer> logger)
     {
         _logger = logger;
     }
@@ -365,6 +374,8 @@ public class MyMessageConsumer : JsonConsumer<MyMessage>
     {
         _logger.LogInformation("Consuming message: {Batch} - {Message}", message.Batch, message.Message);
 
+        // Process the message
+
         return Task.CompletedTask;
     }
 }
@@ -372,7 +383,7 @@ public class MyMessageConsumer : JsonConsumer<MyMessage>
 
 ### Summary
 
-I have wanted to learn how to user Azure Service Bus for awhile now. Not all its features, but just the
+I have wanted to learn how to user Azure Service Bus for awhile. Not all its features, but just the
 basics for now. The publishers and consumers I have created make using the service bus in an application
 straightforward. I have hidden the details of how to configure and register the objects behind simple
 to use abstractions. I had a lot of fun creating these samples.
